@@ -1,0 +1,10 @@
+﻿Source.obj : error LNK2019: unresolved external symbol __imp__glutInitWindowPosition@8 referenced in function _main
+Source.obj : error LNK2019: unresolved external symbol __imp__glutInitWindowSize@8 referenced in function _main
+Source.obj : error LNK2019: unresolved external symbol __imp__glutInitDisplayMode@4 referenced in function _main
+Source.obj : error LNK2019: unresolved external symbol __imp__glutMainLoop@0 referenced in function _main
+Source.obj : error LNK2019: unresolved external symbol __imp__glutDisplayFunc@4 referenced in function _main
+Source.obj : error LNK2019: unresolved external symbol __imp____glutInitWithExit@12 referenced in function _glutInit_ATEXIT_HACK@8
+Source.obj : error LNK2019: unresolved external symbol __imp____glutCreateWindowWithExit@8 referenced in function _glutCreateWindow_ATEXIT_HACK@4
+C:\Users\Luis\Documents\Computer Graphics\freeglut-3.0.0\lib\x64\freeglut.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'X86'
+C:\Users\Luis\Documents\Computer Graphics\glew-2.0.0\lib\Release\x64\glew32.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'X86'
+C:\Users\Luis\Documents\ComputerGraphicsStuff\Homework2\homework2\Debug\homework2.exe : fatal error LNK1120: 7 unresolved externals

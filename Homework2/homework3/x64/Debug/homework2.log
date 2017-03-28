@@ -1,0 +1,29 @@
+﻿  Source.cpp
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(212): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(213): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(214): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(222): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(223): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(223): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(224): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(232): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(233): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(234): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(235): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(242): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(247): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(248): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(249): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(250): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(251): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(258): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(259): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(264): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(265): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(266): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(267): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(268): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(269): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\homework2\homework2\source.cpp(270): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  homework2.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\Homework2\homework2\x64\Debug\homework2.exe
+  homework2.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\Homework2\homework2\x64\Debug\homework2.pdb (Partial PDB)

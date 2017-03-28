@@ -1,0 +1,7 @@
+﻿  Source.cpp
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  All 243 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  TextureTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\TextureTest\x64\Release\TextureTest.exe
+  TextureTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\TextureTest\x64\Release\TextureTest.pdb (Full PDB)

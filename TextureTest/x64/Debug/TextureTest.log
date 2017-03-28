@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\luis\documents\computergraphicsstuff\texturetest\source.cpp(95): warning C4101: 'texture2': unreferenced local variable
+  TextureTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\TextureTest\x64\Debug\TextureTest.exe
+  TextureTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\TextureTest\x64\Debug\TextureTest.pdb (Partial PDB)

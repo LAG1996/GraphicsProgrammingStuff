@@ -1,0 +1,11 @@
+﻿  DefaultPerspectiveSource.cpp
+DefaultPerspectiveSource.cpp(59): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+DefaultPerspectiveSource.cpp(100): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+DefaultPerspectiveSource.cpp(167): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+  Generating code
+  14 of 32 functions (43.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    3 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  MeshClassTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\MeshClassTest\x64\Release\MeshClassTest.exe
+  MeshClassTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\MeshClassTest\x64\Release\MeshClassTest.pdb (Full PDB)

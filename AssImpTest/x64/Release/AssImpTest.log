@@ -1,0 +1,10 @@
+﻿  DefaultPerspectiveSource.cpp
+DefaultPerspectiveSource.cpp(60): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+DefaultPerspectiveSource.cpp(101): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+DefaultPerspectiveSource.cpp(166): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+  Generating code
+c:\users\luis\documents\computer graphics\commonincludes\vec4.h(53): warning C4172: returning address of local variable or temporary: stuff
+  All 22 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  AssImpTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\AssImpTest\x64\Release\AssImpTest.exe
+  AssImpTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\AssImpTest\x64\Release\AssImpTest.pdb (Full PDB)

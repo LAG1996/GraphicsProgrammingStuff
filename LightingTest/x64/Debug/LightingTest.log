@@ -1,0 +1,8 @@
+﻿  Source.cpp
+c:\users\luis\documents\computergraphicsstuff\lightingtest\source.cpp(154): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\lightingtest\source.cpp(159): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\lightingtest\source.cpp(129): warning C4101: 'EBO': unreferenced local variable
+c:\users\luis\documents\computergraphicsstuff\lightingtest\source.cpp(283): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\luis\documents\computergraphicsstuff\lightingtest\source.cpp(284): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  LightingTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\LightingTest\x64\Debug\LightingTest.exe
+  LightingTest.vcxproj -> C:\Users\Luis\Documents\ComputerGraphicsStuff\LightingTest\x64\Debug\LightingTest.pdb (Partial PDB)
