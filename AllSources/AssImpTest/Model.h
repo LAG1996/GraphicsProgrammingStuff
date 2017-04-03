@@ -25,6 +25,7 @@ private:
 	// Model Data
 	vector<Mesh> _meshes; //List of meshes in the model
 	string _directory; //The model's directory
+	vector<Texture> _textures_loaded;
 	// Private Functions
 	void _LoadModel(string path); //Retrieve model found in path
 	void _ProcessNode(aiNode* node, const aiScene* scene); //Process all nodes in the scene graph imported in _LoadModel

@@ -1,4 +1,5 @@
 #include "Model.h"
+#include "SOIL.h"
 
 //Retrieve the model from a file
 void Model::_LoadModel(string path)
@@ -105,17 +106,53 @@ vector<Texture> Model::_LoadMaterialTextures(aiMaterial* mat, aiTextureType type
 	{
 		aiString str;
 		mat->GetTexture(type, i, &str);
+		GLboolean skip = false;
+		//Check if this texture was already loaded
+		for (GLuint j = 0; j < _textures_loaded.size(); j++)
+		{
+			if (std::strcmp(_textures_loaded[j].path.C_Str(), str.C_Str()) == 0)
+			{
+				//If this texture was already loaded, just push it to the texture vector
+				textures.push_back(_textures_loaded[j]);
+				skip = true;
+				break;
+			}
+		}
 
-		Texture tex;
-		tex.id = this->_TextureFromFile(str.C_Str(), this->_directory);
-		tex.type = typeName;
-		tex.path = str;
-		textures.push_back(tex);
+		//If this texture was not loaded, load it
+		if (!skip)
+		{
+			Texture tex;
+			tex.id = this->_TextureFromFile(str.C_Str(), this->_directory);
+			tex.type = typeName;
+			tex.path = str;
+			textures.push_back(tex);
+		}
+		
 	}
 	return textures;
 }
 
 GLuint Model::_TextureFromFile(const char* path, string directory)
 {
+	//Generate texture ID and load texture data
+	string filename = string(path);
+	GLuint textureID;
+	glGenTextures(1, &textureID);
 
+	int width, height;
+	unsigned char* image = SOIL_load_image(filename.c_str(), &width, &height, 0, SOIL_LOAD_RGBA);
+	//Assign texture to ID
+	glBindTexture(GL_TEXTURE_2D, textureID);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+	//Parameters
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glBindTexture(GL_TEXTURE_2D, 0);
+	SOIL_free_image_data(image);
+	return textureID;
 }
