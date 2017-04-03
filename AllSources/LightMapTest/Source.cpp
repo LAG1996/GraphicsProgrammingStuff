@@ -1,7 +1,7 @@
 #include<iostream>
 
 //#define GLEW_STATIC
-#include<glew.h>
+#include<GLEW\GL\glew.h>
 #include<glfw3.h>
 
 #include<SOIL\SOIL.h>
@@ -22,6 +22,8 @@ bool keys[1024];
 Camera cam(glm::vec3(0.0f, 0.0f, 3.0f)); //Initialize the camera with a position
 glm::vec3 lightSourcePos(1.2f, 1.0f, 2.0f); //The light source's position
 
+glm::vec3 lightColor(1.0f, 0.3f, 0.4f);
+
 GLfloat deltaTime = 0.0f;
 GLfloat lastFrame = 0.0f;
 
@@ -39,6 +41,7 @@ void scroll_callback(GLFWwindow*, double, double);
 
 //Utility functions
 void do_movement();
+
 
 //Specification for our cube
 GLfloat vertices[] = {
@@ -218,6 +221,10 @@ int main()
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		glm::mat4 model;
+		glm::mat4 projection;
+		glm::mat4 view;
+
 		objectShader.Use();
 		
 		GLint lightPosLoc = glGetUniformLocation(objectShader.Program, "light.position");
@@ -231,7 +238,7 @@ int main()
 
 		//Set light struct's properties
 		glUniform3f(glGetUniformLocation(objectShader.Program, "light.ambient"), 0.2f, 0.2f, 0.2f);
-		glUniform3f(glGetUniformLocation(objectShader.Program, "light.diffuse"), 0.6f, 0.2f, 0.4f);
+		glUniform3f(glGetUniformLocation(objectShader.Program, "light.diffuse"), lightColor.x, lightColor.y, lightColor.z);
 		glUniform3f(glGetUniformLocation(objectShader.Program, "light.specular"), 1.0f, 1.0f, 1.0f);
 
 		//Set material struct's properties
@@ -239,9 +246,8 @@ int main()
 		glUniform1f(glGetUniformLocation(objectShader.Program, "material.shininess"), 64.0f);
 
 		//Create camera transformations
-		glm::mat4 view;
 		view = cam.GetViewMatrix();
-		glm::mat4 projection = glm::perspective(cam.Zoom, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
+		projection = glm::perspective(cam.Zoom, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
 		//Get the uniform locations for each matrix that we are going to manipulate
 		GLint modelLoc = glGetUniformLocation(objectShader.Program, "model");
 		GLint viewLoc = glGetUniformLocation(objectShader.Program, "view");
@@ -260,7 +266,92 @@ int main()
 
 		//Draw the container (using the container's vertex attributes)
 		glBindVertexArray(containerVAO);
-		glm::mat4 model;
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
+
+
+		/*
+		OBJECT 2's PROPERTIES
+		*/
+		glUniform3f(lightPosLoc, lightSourcePos.x, lightSourcePos.y, lightSourcePos.z);
+		glUniform3f(viewPosLoc, cam.Position.x, cam.Position.y, cam.Position.z);
+
+		//Set light struct's properties
+		glUniform3f(glGetUniformLocation(objectShader.Program, "light.ambient"), 0.2f, 0.2f, 0.2f);
+		glUniform3f(glGetUniformLocation(objectShader.Program, "light.diffuse"), lightColor.x, lightColor.y, lightColor.z);
+		glUniform3f(glGetUniformLocation(objectShader.Program, "light.specular"), 1.0f, 1.0f, 1.0f);
+
+		//Set material struct's properties
+		glUniform3f(glGetUniformLocation(objectShader.Program, "material.specular"), 0.5f, 0.5f, 0.5f);
+		glUniform1f(glGetUniformLocation(objectShader.Program, "material.shininess"), 64.0f);
+
+		//Create camera transformations
+		view = cam.GetViewMatrix();
+	    projection = glm::perspective(cam.Zoom, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
+		//Get the uniform locations for each matrix that we are going to manipulate
+		modelLoc = glGetUniformLocation(objectShader.Program, "model");
+		viewLoc = glGetUniformLocation(objectShader.Program, "view");
+		projectionLoc = glGetUniformLocation(objectShader.Program, "projection");
+
+		//Pas the matrices to the shader
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
+		//Bind the diffuse map
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, diffuseMap);
+		//Bind the specular map
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, specularMap);
+
+		//Draw the container (using the container's vertex attributes)
+		glBindVertexArray(containerVAO);
+		model = glm::translate(model, glm::vec3(1.0f, 2.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
+
+		/*
+		OBJECT 3's PROPERTIES
+		*/
+		glUniform3f(lightPosLoc, lightSourcePos.x, lightSourcePos.y, lightSourcePos.z);
+		glUniform3f(viewPosLoc, cam.Position.x, cam.Position.y, cam.Position.z);
+
+		//Set light struct's properties
+		glUniform3f(glGetUniformLocation(objectShader.Program, "light.ambient"), 0.2f, 0.2f, 0.2f);
+		glUniform3f(glGetUniformLocation(objectShader.Program, "light.diffuse"), 0.6f, 0.2f, 0.4f);
+		glUniform3f(glGetUniformLocation(objectShader.Program, "light.specular"), 1.0f, 1.0f, 1.0f);
+
+		//Set material struct's properties
+		glUniform3f(glGetUniformLocation(objectShader.Program, "material.specular"), 0.5f, 0.5f, 0.5f);
+		glUniform1f(glGetUniformLocation(objectShader.Program, "material.shininess"), 64.0f);
+
+		//Create camera transformations
+		view = cam.GetViewMatrix();
+		projection = glm::perspective(cam.Zoom, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
+		//Get the uniform locations for each matrix that we are going to manipulate
+		modelLoc = glGetUniformLocation(objectShader.Program, "model");
+		viewLoc = glGetUniformLocation(objectShader.Program, "view");
+		projectionLoc = glGetUniformLocation(objectShader.Program, "projection");
+
+		//Pas the matrices to the shader
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
+		//Bind the diffuse map
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, diffuseMap);
+		//Bind the specular map
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, specularMap);
+
+		//Draw the container (using the container's vertex attributes)
+		glBindVertexArray(containerVAO);
+		model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -3.0f));
+		model = glm::rotate(model, glm::radians(45.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
@@ -271,7 +362,7 @@ int main()
 
 		lampShader.Use(); //The lamp is shaded differently from the container
 
-		glUniform3f(glGetUniformLocation(lampShader.Program, "color"), 0.6f, 0.2f, 0.4f);
+		glUniform3f(glGetUniformLocation(lampShader.Program, "color"), lightColor.x, lightColor.y, lightColor.z);
 
 		modelLoc = glGetUniformLocation(lampShader.Program, "model");
 		viewLoc = glGetUniformLocation(lampShader.Program, "view");
