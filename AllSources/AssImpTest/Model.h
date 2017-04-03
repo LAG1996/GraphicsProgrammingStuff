@@ -23,11 +23,12 @@ public:
 
 private:
 	// Model Data
-	vector<Mesh> _meshes;
-	string _directory;
-	// Functions
-	void _LoadModel(string path);
-	void _ProcessNode(aiNode* node, const aiScene* scene);
+	vector<Mesh> _meshes; //List of meshes in the model
+	string _directory; //The model's directory
+	// Private Functions
+	void _LoadModel(string path); //Retrieve model found in path
+	void _ProcessNode(aiNode* node, const aiScene* scene); //Process all nodes in the scene graph imported in _LoadModel
 	Mesh _ProcessMesh(aiMesh* mesh, const aiScene* scene);
 	vector<Texture> _LoadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName);
+	GLuint _TextureFromFile(const char*, string);
 };
