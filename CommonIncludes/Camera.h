@@ -39,7 +39,7 @@ Affirmer understands and acknowledges that Creative Commons is not a party to th
 #include <vector>
 
 // GL Includes
-#include <GL/glew.h>
+#include <glew.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
