@@ -14,6 +14,8 @@ void Model::_LoadModel(string path)
 		std::cout << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
 		return;
 	}
+	else
+		std::cout << "SUCCESS::ASSIMP::FILE READ SUCCESSFUL" << std::endl;
 
 	//Process all nodes recursively
 	this->_directory = path.substr(0, path.find_last_of('/')); //Get this model's directory
@@ -127,6 +129,7 @@ vector<Texture> Model::_LoadMaterialTextures(aiMaterial* mat, aiTextureType type
 			tex.type = typeName;
 			tex.path = str;
 			textures.push_back(tex);
+			this->_textures_loaded.push_back(tex);
 		}
 		
 	}
@@ -137,6 +140,9 @@ GLuint Model::_TextureFromFile(const char* path, string directory)
 {
 	//Generate texture ID and load texture data
 	string filename = string(path);
+
+	filename = directory + '/' + filename;
+
 	GLuint textureID;
 	glGenTextures(1, &textureID);
 
