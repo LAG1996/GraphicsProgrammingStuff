@@ -5,42 +5,36 @@
 void Model::_LoadModel(string path)
 {
 	//Initialize the importer
-	this->scene = this->importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+	Assimp::Importer importer;
+	this->scene = scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
 
 	//Error check
 	if (!this->scene || this->scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !this->scene->mRootNode)
 	{
-		std::cout << "ERROR::ASSIMP::" << this->importer.GetErrorString() << std::endl;
+		std::cout << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
 		return;
 	}
 	else
 		std::cout << "SUCCESS::ASSIMP::FILE READ SUCCESSFUL" << std::endl;
 
-	this->globalInverseTransform = this->scene->mRootNode->mTransformation;
-	this->globalInverseTransform.Inverse();
+	globalInverseTransform = glm::inverse(AiToGLMMat4(scene->mRootNode->mTransformation));
 
 	//Process all nodes recursively
 	this->_directory = path.substr(0, path.find_last_of('/')); //Get this model's directory
 
-	for (GLuint i = 0; i < this->scene->mNumAnimations; i++)
-	{
-		aiAnimation * animation = this->scene->mAnimations[i];
-		this->MapNameToAnimation[animation->mName.data] = animation;
-	}
-
-
 	this->_ProcessNode(this->scene->mRootNode, this->scene);
+	this->_ProcessBones();
 }
 
 //Recursively process all nodes in the imported model starting at a node and then all of its children
 void Model::_ProcessNode(aiNode* node, const aiScene* scene)
 {
-
+	NameToNode[node->mName.data] = node;
 	//Process all the node's meshes
 	for (GLuint i = 0; i < node->mNumMeshes; i++)
 	{
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-		this->_ProcessMesh(mesh, scene, this->_meshes.size() + 1);
+		this->_meshes.push_back(this->_ProcessMesh(mesh, scene));
 	}
 
 	//Recurse to child nodes
@@ -53,11 +47,21 @@ void Model::_ProcessNode(aiNode* node, const aiScene* scene)
 //Process the data gathered from assimp into a mesh
 //We do this by getting all the important parts of a mesh (vertices, indices, and textures), and then generating a mesh out of it
 //(i.e. creating a new Mesh object)
-void Model::_ProcessMesh(aiMesh* mesh, const aiScene* scene, GLuint MeshID)
+Mesh Model::_ProcessMesh(aiMesh* mesh, const aiScene* scene)
 {
 	vector<Vertex> vertices;
 	vector<GLuint> indices;
 	vector<Texture> textures;
+
+	vector<unsigned int> boneIDs;
+	vector<float> boneWeights;
+
+	const int WEIGHTS_PER_VERTEX = 4;
+	
+	int boneArraySize = mesh->mNumVertices*WEIGHTS_PER_VERTEX;
+
+	boneIDs.resize(boneArraySize);
+	boneWeights.resize(boneArraySize);
 
 	for (GLuint i = 0; i < mesh->mNumVertices; i++)
 	{
@@ -107,103 +111,74 @@ void Model::_ProcessMesh(aiMesh* mesh, const aiScene* scene, GLuint MeshID)
 		vector<Texture> specularMaps = this->_LoadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
 		textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 	}
-	Mesh m = Mesh(vertices, textures, indices);
-	m.ID = this->_meshes.size();
-	m.BaseVertex = _amount_vertices;
 
-	_amount_vertices += mesh->mNumVertices;
-
-	this->_meshes.push_back(m);
-
-	//Process bones if there are any
-	if (mesh->HasBones())
-	{
-		_ProcessBones(mesh, m.ID);
-	}
-}
-
-void Model::_ProcessBones(aiMesh* mesh, GLuint MeshID)
-{
+	//Process bones
 	for (int i = 0; i < mesh->mNumBones; i++)
 	{
-		string BoneName(mesh->mBones[i]->mName.data);
+		aiBone* aiBone = mesh->mBones[i];
 
-		GLuint bone_index = 0;
-
-		if (MapNameToBoneID.find(BoneName) != MapNameToBoneID.end())
+		for (int j = 0; j < aiBone->mNumWeights; j++)
 		{
-			bone_index = MapNameToBoneID[BoneName];
+			aiVertexWeight weight = aiBone->mWeights[j];
+			unsigned int vertexStart = weight.mVertexId*WEIGHTS_PER_VERTEX;
+
+			for (int k = 0; k < WEIGHTS_PER_VERTEX; k++)
+			{
+				if (boneWeights.at(vertexStart + k) == 0)
+				{
+					boneWeights.at(vertexStart + k) = weight.mWeight;
+					boneIDs.at(vertexStart + k) = i;
+
+					vertices.at(weight.mVertexId).id[k] = i;
+
+					vertices.at(weight.mVertexId).Weights[k] = weight.mWeight;
+
+					break;
+				}
+			}	
 		}
-		else
+	}
+
+	return Mesh(vertices, textures, indices);
+}
+
+void Model::_ProcessBones()
+{
+	for (int i = 0; i < this->scene->mNumMeshes; i++)
+	{
+		for (int j = 0; j < this->scene->mMeshes[i]->mNumBones; j++)
 		{
-			bone_index = _amount_bones++;
-			BoneInfo NewBone;
-			
-			MapIDToBoneInfo[bone_index] = NewBone;
+			//Store information about bones into the Bone class
+			string name = this->scene->mMeshes[i]->mBones[j]->mName.data;
+			glm::mat4 b_transform = glm::transpose(AiToGLMMat4(this->scene->mMeshes[i]->mBones[j]->mOffsetMatrix));
+
+			Bone bone(&_meshes.at(i), i, name, b_transform);
+			bone.node = FindAiNode(name);
+			bone.animNode = FindAiNodeAnim(name);
+
+			if (bone.animNode == nullptr)
+			{
+				std::cout << "No animations have been found for" + name << std::endl;
+			}
+
+			NameToBone[name] = &bone;
 		}
-			
-		MapNameToBoneID[BoneName] = bone_index;
-		MapIDToBoneInfo[bone_index].BoneOffset = mesh->mBones[i]->mOffsetMatrix;
-
-		VertexBoneData NewBone;
-		for (GLuint j = 0; j < mesh->mBones[i]->mNumWeights; j++)
-		{
-			GLuint VertID = _meshes[MeshID].BaseVertex + mesh->mBones[i]->mWeights[j].mVertexId;
-			float Weight = mesh->mBones[i]->mWeights[j].mWeight;
-
-			
-			NewBone.IDs.push_back(VertID);
-			NewBone.Weights.push_back(Weight);
-		}
-
-		_Bones.push_back(NewBone);
 	}
-}
 
-void Model::BoneTransform(float TimeInSeconds, vector<aiMatrix4x4>& Transforms, string AnimName)
-{
-	aiMatrix4x4 Identity = aiMatrix4x4();
-	
-	float TicksPerSecond = this->scene->mAnimations[0]->mTicksPerSecond;
-
-	if (TicksPerSecond == 0)
+	for (std::map<string, Bone*>::iterator it = NameToBone.begin(); it != NameToBone.end(); it++)
 	{
-		TicksPerSecond = 25.0f;
+		string b_name = it->first;
+		string p_name = FindAiNode(b_name)->mParent->mName.data;
+
+		Bone* p_bone = FindBone(p_name);
+		it->second->parent = p_bone;
 	}
 
-	float TimeInTicks = TimeInSeconds * TimeInTicks;
-	float AnimationTime = fmod(TimeInTicks, this->scene->mAnimations[0]->mDuration);
-
-	ReadNodeHeirarchy(AnimationTime, this->scene->mRootNode, Identity, AnimName);
-
-	for (GLuint i = 0; i < _amount_bones; i++)
+	if (_meshes.size() > 0)
 	{
-		Transforms.push_back(this->MapIDToBoneInfo[i].FinalTransformation);
+		_meshes.at(0).sceneLoaderSkeleton.Init(bones, globalInverseTransform);
 	}
 }
-
-void Model::ReadNodeHeirarchy(float AnimationTime, const aiNode* node, aiMatrix4x4 ParentTransform, string AnimName)
-{
-	string NodeName(node->mName.data);
-
-	const aiAnimation* animation = MapNameToAnimation[AnimName];
-
-	aiMatrix4x4 NodeTransformation = node->mTransformation;
-
-	if (animation)
-	{
-		//Interpolate scaling and generate scaling transformation matrix
-		aiVector3D Scaling;
-		
-	}
-}
-
-void Model::CalcInterpolatedScaling(aiQuaternion & Out, float AnimationTime, const aiNodeAnim* nodeAnim)
-{
-
-}
-
-
 
 vector<Texture> Model::_LoadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName)
 {
@@ -265,4 +240,15 @@ GLuint Model::_TextureFromFile(const char* path, string directory)
 	glBindTexture(GL_TEXTURE_2D, 0);
 	SOIL_free_image_data(image);
 	return textureID;
+}
+
+void Model::_AnimNodeProcess()
+{
+	if (this->scene->mNumAnimations == 0)
+		return;
+
+	for (int i = 0; i < scene->mAnimations[0]->mNumChannels; i++)
+	{
+		NameToNodeAnim[scene->mAnimations[0]->mChannels[i]->mNodeName.data] = scene->mAnimations[0]->mChannels[i];
+	}
 }

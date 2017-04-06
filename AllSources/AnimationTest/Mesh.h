@@ -7,9 +7,9 @@
 
 #include<GLEW/GL/glew.h>
 // GLM Mathematics
-#include <GLM/glm.hpp>
-#include <GLM/gtc/matrix_transform.hpp>
-#include <GLM/gtc/type_ptr.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #include<assimp\Importer.hpp>
 #include<assimp\scene.h>
@@ -25,6 +25,9 @@ struct Vertex {
 	glm::vec3 Position;
 	glm::vec3 Normal;
 	glm::vec2 TexCoords;
+
+	float Weights[4];
+	unsigned int id[4];
 };
 
 struct Texture {
@@ -45,8 +48,8 @@ private:
 	void _SetUpMesh();
 
 public:
-	GLuint ID;
-	GLuint BaseVertex;
+
+	unsigned int BaseVertex;
 
 	Mesh(vector<Vertex> ListVertices, vector<Texture> ListTextures, vector<GLuint> indices)
 	{
@@ -57,7 +60,7 @@ public:
 		this->_SetUpMesh();
 	}
 
-	void Draw(Shader shader, glm::vec3 color, float shininess);
+	void Draw(Shader shader, glm::vec3 Color, float shininess);
 };
 
 

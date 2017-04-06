@@ -1,16 +1,16 @@
 #include "Mesh.h"
 void Mesh::_SetUpMesh()
 {
-	glGenVertexArrays(1, &this->VAO);
-	glGenBuffers(1, &this->VBO);
-	glGenBuffers(1, &this->EBO);
+	glGenVertexArrays(1, &VAO);
+	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &EBO);
 
-	glBindVertexArray(this->VAO);
+	glBindVertexArray(VAO);
 
-	glBindBuffer(GL_ARRAY_BUFFER, this->VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, ListVertices.size() * sizeof(Vertex), &ListVertices[0], GL_STATIC_DRAW);
 
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->EBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLuint), &indices[0], GL_STATIC_DRAW);
 
 	//Vertex Positions
@@ -24,6 +24,14 @@ void Mesh::_SetUpMesh()
 	//Texture Coordinates
 	glEnableVertexAttribArray(2);
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, TexCoords));
+
+	//Vector IDs
+	glEnableVertexAttribArray(3);
+	glVertexAttribIPointer(3, 1, GL_INT, sizeof(Vertex), (GLvoid*)offsetof(Vertex, id));
+
+	//Vector Weights
+	glEnableVertexAttribArray(4);
+	glVertexAttribPointer(4, 4, GL_FLOAT, GL_TRUE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, Weights));
 
 
 	glBindVertexArray(0);
@@ -66,21 +74,21 @@ void Mesh::Draw(Shader shader, glm::vec3 Color, float shininess)
 		}
 	}
 
-		glActiveTexture(GL_TEXTURE0);
+	glActiveTexture(GL_TEXTURE0);
 
-		glUniform1f(glGetUniformLocation(shader.Program, "material.shininess"), shininess);
+	glUniform1f(glGetUniformLocation(shader.Program, "material.shininess"), shininess);
 
-		glUniform3f(glGetUniformLocation(shader.Program, "material.ambient"), Color.x, Color.y, Color.z);
+	glUniform3f(glGetUniformLocation(shader.Program, "material.ambient"), Color.x, Color.y, Color.z);
 
 
-		//Draw the mesh with textures and shading and all that beautiful glory
-		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
-		glBindVertexArray(0);
+	//Draw the mesh with textures and shading and all that beautiful glory
+	glBindVertexArray(VAO);
+	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
 
-		for (GLuint i = 0; i < this->ListTextures.size(); i++)
-		{
-			glActiveTexture(GL_TEXTURE0 + i);
-			glBindTexture(GL_TEXTURE_2D, 0);
-		}
+	for (GLuint i = 0; i < this->ListTextures.size(); i++)
+	{
+		glActiveTexture(GL_TEXTURE0 + i);
+		glBindTexture(GL_TEXTURE_2D, 0);
+	}
 }
