@@ -15,9 +15,9 @@
 #include <glm/gtc/type_ptr.hpp>
 
 // Other includes
-#include "Shader.h"
+#include "Util/Shader.h"
 #include "Model.h"
-#include "Camera.h"
+#include "Util/Camera.h"
 
 Camera cam(glm::vec3(0.0f, 1.0f, 3.0f));
 
@@ -111,7 +111,7 @@ int main()
 		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
-		character.Draw(shader);
+		character.Draw(shader, glm::vec3(0.3f, 0.3f, 0.3f), 2.0f);
 
 
         // Swap the screen buffers
