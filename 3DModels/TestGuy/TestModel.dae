@@ -1,1501 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
-  <asset>
-    <contributor>
-      <author>Blender User</author>
-      <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235283</authoring_tool>
-    </contributor>
-    <created>2017-04-06T11:21:31</created>
-    <modified>2017-04-06T11:21:31</modified>
-    <unit name="meter" meter="1"/>
-    <up_axis>Z_UP</up_axis>
-  </asset>
-  <library_cameras>
-    <camera id="Camera-camera" name="Camera">
-      <optics>
-        <technique_common>
-          <perspective>
-            <xfov sid="xfov">49.13434</xfov>
-            <aspect_ratio>1.777778</aspect_ratio>
-            <znear sid="znear">0.1</znear>
-            <zfar sid="zfar">100</zfar>
-          </perspective>
-        </technique_common>
-      </optics>
-      <extra>
-        <technique profile="blender">
-          <YF_dofdist>0</YF_dofdist>
-          <shiftx>0</shiftx>
-          <shifty>0</shifty>
-        </technique>
-      </extra>
-    </camera>
-  </library_cameras>
-  <library_lights>
-    <light id="Lamp-light" name="Lamp">
-      <technique_common>
-        <point>
-          <color sid="color">1 1 1</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.00111109</quadratic_attenuation>
-        </point>
-      </technique_common>
-      <extra>
-        <technique profile="blender">
-          <adapt_thresh>0.000999987</adapt_thresh>
-          <area_shape>1</area_shape>
-          <area_size>0.1</area_size>
-          <area_sizey>0.1</area_sizey>
-          <area_sizez>1</area_sizez>
-          <atm_distance_factor>1</atm_distance_factor>
-          <atm_extinction_factor>1</atm_extinction_factor>
-          <atm_turbidity>2</atm_turbidity>
-          <att1>0</att1>
-          <att2>1</att2>
-          <backscattered_light>1</backscattered_light>
-          <bias>1</bias>
-          <blue>1</blue>
-          <buffers>1</buffers>
-          <bufflag>0</bufflag>
-          <bufsize>2880</bufsize>
-          <buftype>2</buftype>
-          <clipend>30.002</clipend>
-          <clipsta>1.000799</clipsta>
-          <compressthresh>0.04999995</compressthresh>
-          <dist sid="blender_dist">29.99998</dist>
-          <energy sid="blender_energy">1</energy>
-          <falloff_type>2</falloff_type>
-          <filtertype>0</filtertype>
-          <flag>0</flag>
-          <gamma sid="blender_gamma">1</gamma>
-          <green>1</green>
-          <halo_intensity sid="blnder_halo_intensity">1</halo_intensity>
-          <horizon_brightness>1</horizon_brightness>
-          <mode>8192</mode>
-          <ray_samp>1</ray_samp>
-          <ray_samp_method>1</ray_samp_method>
-          <ray_samp_type>0</ray_samp_type>
-          <ray_sampy>1</ray_sampy>
-          <ray_sampz>1</ray_sampz>
-          <red>1</red>
-          <samp>3</samp>
-          <shadhalostep>0</shadhalostep>
-          <shadow_b sid="blender_shadow_b">0</shadow_b>
-          <shadow_g sid="blender_shadow_g">0</shadow_g>
-          <shadow_r sid="blender_shadow_r">0</shadow_r>
-          <sky_colorspace>0</sky_colorspace>
-          <sky_exposure>1</sky_exposure>
-          <skyblendfac>1</skyblendfac>
-          <skyblendtype>1</skyblendtype>
-          <soft>3</soft>
-          <spotblend>0.15</spotblend>
-          <spotsize>75</spotsize>
-          <spread>1</spread>
-          <sun_brightness>1</sun_brightness>
-          <sun_effect_type>0</sun_effect_type>
-          <sun_intensity>1</sun_intensity>
-          <sun_size>1</sun_size>
-          <type>0</type>
-        </technique>
-      </extra>
-    </light>
-  </library_lights>
-  <library_images/>
-  <library_effects>
-    <effect id="Material-effect">
-      <profile_COMMON>
-        <technique sid="common">
-          <phong>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
-            </diffuse>
-            <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
-            </specular>
-            <shininess>
-              <float sid="shininess">50</float>
-            </shininess>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </phong>
-        </technique>
-      </profile_COMMON>
-    </effect>
-  </library_effects>
-  <library_materials>
-    <material id="Material-material" name="Material">
-      <instance_effect url="#Material-effect"/>
-    </material>
-  </library_materials>
-  <library_geometries>
-    <geometry id="Cube-mesh" name="Cube">
-      <mesh>
-        <source id="Cube-mesh-positions">
-          <float_array id="Cube-mesh-positions-array" count="177">1 1 -2.613126 1 -1 -2.613126 1 0.9999995 4.742141 0.9999994 -1.000001 4.742141 2.027165 -0.466944 -0.1072949 2.027165 -0.466944 0.826594 2.027165 0.466944 -0.1072949 2.027165 0.466944 0.826594 2.961053 -0.466944 -0.1072949 2.961053 -0.466944 0.826594 2.961053 0.466944 -0.1072949 2.961053 0.466944 0.826594 0.8778194 0.8778188 3.107637 0.8778187 -0.8778195 3.107637 0.938909 -0.93891 3.92489 0.9711828 -1.811731 -5.446003 0.9711828 -1.811731 -4.974402 0.495121 -0.4164358 -5.446003 0.495121 -0.4164358 -3.971729 2.366478 -1.335669 -5.446003 2.366478 -1.335669 -4.974402 1.890416 0.05962592 -5.446003 1.890416 0.05962592 -3.971729 0.7861149 0.7861148 0.3551561 0.7861147 -0.7861151 0.3551561 -1 1 -2.613126 -1 -1 -2.613126 -1 0.9999995 4.742141 -0.9999994 -1.000001 4.742141 -2.027165 -0.466944 -0.1072949 -2.027165 -0.466944 0.826594 -2.027165 0.466944 -0.1072949 -2.027165 0.466944 0.826594 -2.961053 -0.466944 -0.1072949 -2.961053 -0.466944 0.826594 -2.961053 0.466944 -0.1072949 -2.961053 0.466944 0.826594 -0.8778194 0.8778188 3.107637 -0.8778187 -0.8778195 3.107637 -0.938909 -0.93891 3.92489 0 -1 4.742141 0 -0.8778192 3.107637 0 -1.559916 3.92489 -0.9711828 -1.811731 -5.446003 -0.9711828 -1.811731 -4.974402 -0.495121 -0.4164358 -5.446003 -0.495121 -0.4164358 -3.971729 -2.366478 -1.335669 -5.446003 -2.366478 -1.335669 -4.974402 -1.890416 0.05962592 -5.446003 -1.890416 0.05962592 -3.971729 -0.7861149 0.7861148 0.3551561 -0.7861147 -0.7861151 0.3551561 0 1 -2.613126 0 -0.9999999 -2.613126 0 0.9999998 4.742141 0 0.8778191 3.107637 0 -0.7861148 0.3551561 0 0.7861149 0.3551561</float_array>
-          <technique_common>
-            <accessor source="#Cube-mesh-positions-array" count="59" stride="3">
-              <param name="X" type="float"/>
-              <param name="Y" type="float"/>
-              <param name="Z" type="float"/>
-            </accessor>
-          </technique_common>
-        </source>
-        <source id="Cube-mesh-normals">
-          <float_array id="Cube-mesh-normals-array" count="222">3.53881e-7 0 1 0.9972178 -5.80967e-7 -0.07454311 -1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1 -3.02846e-7 -0.9994455 -0.03329849 0.9994455 0 -0.03329855 -3.90102e-7 -0.9972179 -0.07454299 0.4789756 -0.7241705 0.4961447 -0.9464289 -0.3229123 0 -0.3229128 0.9464288 0 0.9464289 0.3229125 0 0.3229123 -0.946429 0 2.19388e-7 0 -1 0.1815978 -0.532247 0.826883 0.997414 0 0.07187044 2.67783e-7 0.9994456 -0.03329837 -1.1922e-7 -0.997414 0.07187038 2.15904e-7 0.9972179 -0.07454293 1.65607e-7 0.997414 0.07187056 -0.9972179 -3.31413e-7 -0.07454299 4.01675e-7 -0.9994456 -0.03329849 -0.9994455 0 -0.03329855 3.72839e-7 -0.9972179 -0.07454305 4.99966e-7 -0.9972178 -0.07454323 0.9464288 -0.3229127 0 0.3229128 0.9464288 0 -0.9464288 0.3229126 0 -0.3229123 -0.946429 0 -4.38777e-7 0 -1 -0.1815978 -0.532247 0.826883 -0.997414 0 0.07187044 -2.71208e-7 0.9994456 -0.03329837 1.20172e-7 -0.997414 0.07187038 -2.1819e-7 0.9972179 -0.07454299 -2.28426e-7 0.997414 0.0718705 1.65328e-7 0 -1 0.9972179 -3.31413e-7 -0.07454299 0.9972178 -5.81842e-7 -0.07454311 -4.01675e-7 -0.9994456 -0.03329849 0.9994455 -4.93105e-7 -0.03329831 0.4527613 -0.6845362 -0.5713295 -4.99966e-7 -0.9972178 -0.07454323 -0.9464288 -0.3229127 0 -0.3229125 0.9464289 0 0.946429 0.3229122 0 0.3229129 -0.9464288 0 0.1815975 -0.5322472 0.8268829 0.997414 0 0.07187056 1.51423e-7 0.9994455 -0.03329837 -3.05735e-7 -0.997414 0.0718705 2.89986e-7 0.9972179 -0.07454299 2.28426e-7 0.997414 0.0718705 -1.65328e-7 0 -1 -3.53881e-7 0 1 -0.9972178 -5.80967e-7 -0.07454311 -0.9972178 -5.81842e-7 -0.07454311 3.02846e-7 -0.9994455 -0.03329849 -0.9994455 -4.93105e-7 -0.03329831 -0.4527613 -0.6845362 -0.5713295 -0.4789756 -0.7241705 0.4961447 0.9464289 -0.3229123 0 0.3229125 0.9464289 0 -0.946429 0.3229122 0 -0.3229129 -0.9464288 0 -0.1815974 -0.5322472 0.8268829 -0.997414 0 0.07187056 -1.53608e-7 0.9994455 -0.03329837 3.01691e-7 -0.997414 0.0718705 -2.9574e-7 0.9972179 -0.07454299 -1.65607e-7 0.997414 0.07187056</float_array>
-          <technique_common>
-            <accessor source="#Cube-mesh-normals-array" count="74" stride="3">
-              <param name="X" type="float"/>
-              <param name="Y" type="float"/>
-              <param name="Z" type="float"/>
-            </accessor>
-          </technique_common>
-        </source>
-        <vertices id="Cube-mesh-vertices">
-          <input semantic="POSITION" source="#Cube-mesh-positions"/>
-        </vertices>
-        <polylist material="Material-material" count="98">
-          <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
-          <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
-          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
-          <p>2 0 40 0 3 0 2 1 14 1 12 1 7 2 4 2 5 2 11 3 6 3 7 3 9 4 10 4 11 4 5 5 8 5 9 5 6 6 8 6 4 6 11 7 5 7 9 7 24 8 41 8 57 8 12 9 24 9 23 9 14 10 41 10 13 10 14 11 40 11 42 11 16 12 17 12 15 12 22 13 17 13 18 13 20 14 21 14 22 14 16 15 19 15 20 15 17 16 19 16 15 16 22 17 16 17 20 17 23 18 1 18 0 18 23 19 56 19 12 19 24 20 54 20 1 20 12 21 55 21 2 21 23 22 53 22 58 22 0 6 54 6 53 6 27 7 40 7 55 7 38 23 39 23 37 23 29 4 32 4 30 4 31 3 36 3 32 3 35 2 34 2 36 2 33 5 30 5 34 5 33 6 31 6 29 6 30 7 36 7 34 7 52 24 41 24 38 24 52 25 37 25 51 25 41 26 39 26 38 26 39 27 40 27 28 27 44 28 45 28 46 28 45 29 50 29 46 29 49 30 48 30 50 30 47 31 44 31 48 31 47 32 45 32 43 32 44 33 50 33 48 33 26 34 51 34 25 34 56 35 51 35 37 35 54 36 52 36 26 36 55 37 37 37 27 37 51 38 53 38 25 38 25 39 54 39 26 39 2 7 55 7 40 7 13 40 12 40 14 40 2 41 3 41 14 41 7 2 6 2 4 2 11 3 10 3 6 3 9 4 8 4 10 4 5 5 4 5 8 5 6 6 10 6 8 6 11 7 7 7 5 7 24 42 13 42 41 42 12 43 13 43 24 43 14 44 42 44 41 44 14 45 3 45 40 45 16 46 18 46 17 46 22 47 21 47 17 47 20 48 19 48 21 48 16 49 15 49 19 49 17 6 21 6 19 6 22 50 18 50 16 50 23 51 24 51 1 51 23 52 58 52 56 52 24 53 57 53 54 53 12 54 56 54 55 54 23 55 0 55 53 55 0 56 1 56 54 56 27 57 28 57 40 57 27 58 37 58 39 58 39 59 28 59 27 59 29 4 31 4 32 4 31 3 35 3 36 3 35 2 33 2 34 2 33 5 29 5 30 5 33 6 35 6 31 6 30 7 32 7 36 7 52 60 57 60 41 60 52 61 38 61 37 61 41 62 42 62 39 62 39 63 42 63 40 63 44 64 43 64 45 64 45 65 49 65 50 65 49 66 47 66 48 66 47 67 43 67 44 67 47 6 49 6 45 6 44 68 46 68 50 68 26 69 52 69 51 69 56 70 58 70 51 70 54 71 57 71 52 71 55 72 56 72 37 72 51 73 58 73 53 73 25 6 53 6 54 6</p>
-        </polylist>
-      </mesh>
-    </geometry>
-  </library_geometries>
-  <library_animations>
-    <animation id="Bob_pose_bones__Abs___location_X">
-      <source id="Bob_pose_bones__Abs___location_X-input">
-        <float_array id="Bob_pose_bones__Abs___location_X-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_X-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_X-output">
-        <float_array id="Bob_pose_bones__Abs___location_X-output-array" count="1">0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_X-output-array" count="1" stride="1">
-            <param name="X" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_X-interpolation">
-        <Name_array id="Bob_pose_bones__Abs___location_X-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_X-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_X-intangent">
-        <float_array id="Bob_pose_bones__Abs___location_X-intangent-array" count="2">0.5 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_X-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_X-outtangent">
-        <float_array id="Bob_pose_bones__Abs___location_X-outtangent-array" count="2">0.5666667 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_X-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Abs___location_X-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Abs___location_X-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Abs___location_X-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Abs___location_X-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Abs___location_X-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Abs___location_X-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Abs___location_X-sampler" target="Bob/location.X"/>
-    </animation>
-    <animation id="Bob_pose_bones__Abs___location_Y">
-      <source id="Bob_pose_bones__Abs___location_Y-input">
-        <float_array id="Bob_pose_bones__Abs___location_Y-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Y-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_Y-output">
-        <float_array id="Bob_pose_bones__Abs___location_Y-output-array" count="1">-0.5193064</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Y-output-array" count="1" stride="1">
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_Y-interpolation">
-        <Name_array id="Bob_pose_bones__Abs___location_Y-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Y-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_Y-intangent">
-        <float_array id="Bob_pose_bones__Abs___location_Y-intangent-array" count="2">0.5 -0.5193064</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Y-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_Y-outtangent">
-        <float_array id="Bob_pose_bones__Abs___location_Y-outtangent-array" count="2">0.5666667 -0.5193064</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Y-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Abs___location_Y-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Abs___location_Y-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Abs___location_Y-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Abs___location_Y-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Abs___location_Y-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Abs___location_Y-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Abs___location_Y-sampler" target="Bob/location.Y"/>
-    </animation>
-    <animation id="Bob_pose_bones__Abs___location_Z">
-      <source id="Bob_pose_bones__Abs___location_Z-input">
-        <float_array id="Bob_pose_bones__Abs___location_Z-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Z-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_Z-output">
-        <float_array id="Bob_pose_bones__Abs___location_Z-output-array" count="1">0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Z-output-array" count="1" stride="1">
-            <param name="Z" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_Z-interpolation">
-        <Name_array id="Bob_pose_bones__Abs___location_Z-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Z-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_Z-intangent">
-        <float_array id="Bob_pose_bones__Abs___location_Z-intangent-array" count="2">0.5 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Z-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Abs___location_Z-outtangent">
-        <float_array id="Bob_pose_bones__Abs___location_Z-outtangent-array" count="2">0.5666667 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Abs___location_Z-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Abs___location_Z-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Abs___location_Z-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Abs___location_Z-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Abs___location_Z-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Abs___location_Z-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Abs___location_Z-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Abs___location_Z-sampler" target="Bob/location.Z"/>
-    </animation>
-    <animation id="Bob_pose_bones__Head___location_X">
-      <source id="Bob_pose_bones__Head___location_X-input">
-        <float_array id="Bob_pose_bones__Head___location_X-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_X-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_X-output">
-        <float_array id="Bob_pose_bones__Head___location_X-output-array" count="1">0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_X-output-array" count="1" stride="1">
-            <param name="X" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_X-interpolation">
-        <Name_array id="Bob_pose_bones__Head___location_X-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_X-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_X-intangent">
-        <float_array id="Bob_pose_bones__Head___location_X-intangent-array" count="2">0.5 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_X-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_X-outtangent">
-        <float_array id="Bob_pose_bones__Head___location_X-outtangent-array" count="2">0.5666667 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_X-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Head___location_X-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Head___location_X-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Head___location_X-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Head___location_X-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Head___location_X-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Head___location_X-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Head___location_X-sampler" target="Bob/location.X"/>
-    </animation>
-    <animation id="Bob_pose_bones__Head___location_Y">
-      <source id="Bob_pose_bones__Head___location_Y-input">
-        <float_array id="Bob_pose_bones__Head___location_Y-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Y-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_Y-output">
-        <float_array id="Bob_pose_bones__Head___location_Y-output-array" count="1">0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Y-output-array" count="1" stride="1">
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_Y-interpolation">
-        <Name_array id="Bob_pose_bones__Head___location_Y-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Y-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_Y-intangent">
-        <float_array id="Bob_pose_bones__Head___location_Y-intangent-array" count="2">0.5 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Y-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_Y-outtangent">
-        <float_array id="Bob_pose_bones__Head___location_Y-outtangent-array" count="2">0.5666667 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Y-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Head___location_Y-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Head___location_Y-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Head___location_Y-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Head___location_Y-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Head___location_Y-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Head___location_Y-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Head___location_Y-sampler" target="Bob/location.Y"/>
-    </animation>
-    <animation id="Bob_pose_bones__Head___location_Z">
-      <source id="Bob_pose_bones__Head___location_Z-input">
-        <float_array id="Bob_pose_bones__Head___location_Z-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Z-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_Z-output">
-        <float_array id="Bob_pose_bones__Head___location_Z-output-array" count="1">0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Z-output-array" count="1" stride="1">
-            <param name="Z" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_Z-interpolation">
-        <Name_array id="Bob_pose_bones__Head___location_Z-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Z-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_Z-intangent">
-        <float_array id="Bob_pose_bones__Head___location_Z-intangent-array" count="2">0.5 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Z-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Head___location_Z-outtangent">
-        <float_array id="Bob_pose_bones__Head___location_Z-outtangent-array" count="2">0.5666667 0</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Head___location_Z-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Head___location_Z-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Head___location_Z-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Head___location_Z-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Head___location_Z-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Head___location_Z-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Head___location_Z-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Head___location_Z-sampler" target="Bob/location.Z"/>
-    </animation>
-    <animation id="Bob_pose_bones__Hand_L___location_X">
-      <source id="Bob_pose_bones__Hand_L___location_X-input">
-        <float_array id="Bob_pose_bones__Hand_L___location_X-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_X-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_X-output">
-        <float_array id="Bob_pose_bones__Hand_L___location_X-output-array" count="1">-2.775006</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_X-output-array" count="1" stride="1">
-            <param name="X" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_X-interpolation">
-        <Name_array id="Bob_pose_bones__Hand_L___location_X-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_X-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_X-intangent">
-        <float_array id="Bob_pose_bones__Hand_L___location_X-intangent-array" count="2">0.5 -2.775006</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_X-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_X-outtangent">
-        <float_array id="Bob_pose_bones__Hand_L___location_X-outtangent-array" count="2">0.5666667 -2.775006</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_X-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Hand_L___location_X-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Hand_L___location_X-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Hand_L___location_X-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Hand_L___location_X-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Hand_L___location_X-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Hand_L___location_X-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Hand_L___location_X-sampler" target="Bob/location.X"/>
-    </animation>
-    <animation id="Bob_pose_bones__Hand_L___location_Y">
-      <source id="Bob_pose_bones__Hand_L___location_Y-input">
-        <float_array id="Bob_pose_bones__Hand_L___location_Y-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Y-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_Y-output">
-        <float_array id="Bob_pose_bones__Hand_L___location_Y-output-array" count="1">2.647536</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Y-output-array" count="1" stride="1">
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_Y-interpolation">
-        <Name_array id="Bob_pose_bones__Hand_L___location_Y-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Y-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_Y-intangent">
-        <float_array id="Bob_pose_bones__Hand_L___location_Y-intangent-array" count="2">0.5 2.647536</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Y-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_Y-outtangent">
-        <float_array id="Bob_pose_bones__Hand_L___location_Y-outtangent-array" count="2">0.5666667 2.647536</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Y-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Hand_L___location_Y-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Hand_L___location_Y-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Hand_L___location_Y-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Hand_L___location_Y-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Hand_L___location_Y-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Hand_L___location_Y-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Hand_L___location_Y-sampler" target="Bob/location.Y"/>
-    </animation>
-    <animation id="Bob_pose_bones__Hand_L___location_Z">
-      <source id="Bob_pose_bones__Hand_L___location_Z-input">
-        <float_array id="Bob_pose_bones__Hand_L___location_Z-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Z-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_Z-output">
-        <float_array id="Bob_pose_bones__Hand_L___location_Z-output-array" count="1">-0.5281279</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Z-output-array" count="1" stride="1">
-            <param name="Z" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_Z-interpolation">
-        <Name_array id="Bob_pose_bones__Hand_L___location_Z-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Z-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_Z-intangent">
-        <float_array id="Bob_pose_bones__Hand_L___location_Z-intangent-array" count="2">0.5 -0.5281279</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Z-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_L___location_Z-outtangent">
-        <float_array id="Bob_pose_bones__Hand_L___location_Z-outtangent-array" count="2">0.5666667 -0.5281279</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_L___location_Z-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Hand_L___location_Z-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Hand_L___location_Z-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Hand_L___location_Z-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Hand_L___location_Z-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Hand_L___location_Z-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Hand_L___location_Z-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Hand_L___location_Z-sampler" target="Bob/location.Z"/>
-    </animation>
-    <animation id="Bob_pose_bones__Hand_R___location_X">
-      <source id="Bob_pose_bones__Hand_R___location_X-input">
-        <float_array id="Bob_pose_bones__Hand_R___location_X-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_X-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_X-output">
-        <float_array id="Bob_pose_bones__Hand_R___location_X-output-array" count="1">2.156351</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_X-output-array" count="1" stride="1">
-            <param name="X" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_X-interpolation">
-        <Name_array id="Bob_pose_bones__Hand_R___location_X-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_X-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_X-intangent">
-        <float_array id="Bob_pose_bones__Hand_R___location_X-intangent-array" count="2">0.5 2.156351</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_X-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_X-outtangent">
-        <float_array id="Bob_pose_bones__Hand_R___location_X-outtangent-array" count="2">0.5666667 2.156351</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_X-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Hand_R___location_X-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Hand_R___location_X-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Hand_R___location_X-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Hand_R___location_X-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Hand_R___location_X-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Hand_R___location_X-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Hand_R___location_X-sampler" target="Bob/location.X"/>
-    </animation>
-    <animation id="Bob_pose_bones__Hand_R___location_Y">
-      <source id="Bob_pose_bones__Hand_R___location_Y-input">
-        <float_array id="Bob_pose_bones__Hand_R___location_Y-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Y-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_Y-output">
-        <float_array id="Bob_pose_bones__Hand_R___location_Y-output-array" count="1">3.548149</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Y-output-array" count="1" stride="1">
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_Y-interpolation">
-        <Name_array id="Bob_pose_bones__Hand_R___location_Y-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Y-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_Y-intangent">
-        <float_array id="Bob_pose_bones__Hand_R___location_Y-intangent-array" count="2">0.5 3.548149</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Y-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_Y-outtangent">
-        <float_array id="Bob_pose_bones__Hand_R___location_Y-outtangent-array" count="2">0.5666667 3.548149</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Y-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Hand_R___location_Y-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Hand_R___location_Y-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Hand_R___location_Y-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Hand_R___location_Y-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Hand_R___location_Y-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Hand_R___location_Y-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Hand_R___location_Y-sampler" target="Bob/location.Y"/>
-    </animation>
-    <animation id="Bob_pose_bones__Hand_R___location_Z">
-      <source id="Bob_pose_bones__Hand_R___location_Z-input">
-        <float_array id="Bob_pose_bones__Hand_R___location_Z-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Z-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_Z-output">
-        <float_array id="Bob_pose_bones__Hand_R___location_Z-output-array" count="1">-1.175889</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Z-output-array" count="1" stride="1">
-            <param name="Z" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_Z-interpolation">
-        <Name_array id="Bob_pose_bones__Hand_R___location_Z-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Z-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_Z-intangent">
-        <float_array id="Bob_pose_bones__Hand_R___location_Z-intangent-array" count="2">0.5 -1.175889</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Z-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Hand_R___location_Z-outtangent">
-        <float_array id="Bob_pose_bones__Hand_R___location_Z-outtangent-array" count="2">0.5666667 -1.175889</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Hand_R___location_Z-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Hand_R___location_Z-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Hand_R___location_Z-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Hand_R___location_Z-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Hand_R___location_Z-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Hand_R___location_Z-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Hand_R___location_Z-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Hand_R___location_Z-sampler" target="Bob/location.Z"/>
-    </animation>
-    <animation id="Bob_pose_bones__Foot_L___location_X">
-      <source id="Bob_pose_bones__Foot_L___location_X-input">
-        <float_array id="Bob_pose_bones__Foot_L___location_X-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_X-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_X-output">
-        <float_array id="Bob_pose_bones__Foot_L___location_X-output-array" count="1">0.3312099</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_X-output-array" count="1" stride="1">
-            <param name="X" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_X-interpolation">
-        <Name_array id="Bob_pose_bones__Foot_L___location_X-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_X-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_X-intangent">
-        <float_array id="Bob_pose_bones__Foot_L___location_X-intangent-array" count="2">0.5 0.3312099</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_X-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_X-outtangent">
-        <float_array id="Bob_pose_bones__Foot_L___location_X-outtangent-array" count="2">0.5666667 0.3312099</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_X-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Foot_L___location_X-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Foot_L___location_X-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Foot_L___location_X-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Foot_L___location_X-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Foot_L___location_X-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Foot_L___location_X-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Foot_L___location_X-sampler" target="Bob/location.X"/>
-    </animation>
-    <animation id="Bob_pose_bones__Foot_L___location_Y">
-      <source id="Bob_pose_bones__Foot_L___location_Y-input">
-        <float_array id="Bob_pose_bones__Foot_L___location_Y-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Y-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_Y-output">
-        <float_array id="Bob_pose_bones__Foot_L___location_Y-output-array" count="1">-1.229645</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Y-output-array" count="1" stride="1">
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_Y-interpolation">
-        <Name_array id="Bob_pose_bones__Foot_L___location_Y-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Y-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_Y-intangent">
-        <float_array id="Bob_pose_bones__Foot_L___location_Y-intangent-array" count="2">0.5 -1.229645</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Y-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_Y-outtangent">
-        <float_array id="Bob_pose_bones__Foot_L___location_Y-outtangent-array" count="2">0.5666667 -1.229645</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Y-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Foot_L___location_Y-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Foot_L___location_Y-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Foot_L___location_Y-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Foot_L___location_Y-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Foot_L___location_Y-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Foot_L___location_Y-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Foot_L___location_Y-sampler" target="Bob/location.Y"/>
-    </animation>
-    <animation id="Bob_pose_bones__Foot_L___location_Z">
-      <source id="Bob_pose_bones__Foot_L___location_Z-input">
-        <float_array id="Bob_pose_bones__Foot_L___location_Z-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Z-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_Z-output">
-        <float_array id="Bob_pose_bones__Foot_L___location_Z-output-array" count="1">0.8066405</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Z-output-array" count="1" stride="1">
-            <param name="Z" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_Z-interpolation">
-        <Name_array id="Bob_pose_bones__Foot_L___location_Z-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Z-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_Z-intangent">
-        <float_array id="Bob_pose_bones__Foot_L___location_Z-intangent-array" count="2">0.5 0.8066405</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Z-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_L___location_Z-outtangent">
-        <float_array id="Bob_pose_bones__Foot_L___location_Z-outtangent-array" count="2">0.5666667 0.8066405</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_L___location_Z-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Foot_L___location_Z-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Foot_L___location_Z-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Foot_L___location_Z-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Foot_L___location_Z-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Foot_L___location_Z-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Foot_L___location_Z-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Foot_L___location_Z-sampler" target="Bob/location.Z"/>
-    </animation>
-    <animation id="Bob_pose_bones__Foot_R___location_X">
-      <source id="Bob_pose_bones__Foot_R___location_X-input">
-        <float_array id="Bob_pose_bones__Foot_R___location_X-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_X-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_X-output">
-        <float_array id="Bob_pose_bones__Foot_R___location_X-output-array" count="1">0.2858343</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_X-output-array" count="1" stride="1">
-            <param name="X" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_X-interpolation">
-        <Name_array id="Bob_pose_bones__Foot_R___location_X-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_X-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_X-intangent">
-        <float_array id="Bob_pose_bones__Foot_R___location_X-intangent-array" count="2">0.5 0.2858343</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_X-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_X-outtangent">
-        <float_array id="Bob_pose_bones__Foot_R___location_X-outtangent-array" count="2">0.5666667 0.2858343</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_X-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Foot_R___location_X-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Foot_R___location_X-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Foot_R___location_X-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Foot_R___location_X-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Foot_R___location_X-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Foot_R___location_X-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Foot_R___location_X-sampler" target="Bob/location.X"/>
-    </animation>
-    <animation id="Bob_pose_bones__Foot_R___location_Y">
-      <source id="Bob_pose_bones__Foot_R___location_Y-input">
-        <float_array id="Bob_pose_bones__Foot_R___location_Y-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Y-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_Y-output">
-        <float_array id="Bob_pose_bones__Foot_R___location_Y-output-array" count="1">1.075939</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Y-output-array" count="1" stride="1">
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_Y-interpolation">
-        <Name_array id="Bob_pose_bones__Foot_R___location_Y-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Y-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_Y-intangent">
-        <float_array id="Bob_pose_bones__Foot_R___location_Y-intangent-array" count="2">0.5 1.075939</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Y-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_Y-outtangent">
-        <float_array id="Bob_pose_bones__Foot_R___location_Y-outtangent-array" count="2">0.5666667 1.075939</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Y-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Foot_R___location_Y-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Foot_R___location_Y-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Foot_R___location_Y-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Foot_R___location_Y-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Foot_R___location_Y-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Foot_R___location_Y-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Foot_R___location_Y-sampler" target="Bob/location.Y"/>
-    </animation>
-    <animation id="Bob_pose_bones__Foot_R___location_Z">
-      <source id="Bob_pose_bones__Foot_R___location_Z-input">
-        <float_array id="Bob_pose_bones__Foot_R___location_Z-input-array" count="1">0.5333334</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Z-input-array" count="1" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_Z-output">
-        <float_array id="Bob_pose_bones__Foot_R___location_Z-output-array" count="1">-0.7074294</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Z-output-array" count="1" stride="1">
-            <param name="Z" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_Z-interpolation">
-        <Name_array id="Bob_pose_bones__Foot_R___location_Z-interpolation-array" count="1">BEZIER</Name_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Z-interpolation-array" count="1" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_Z-intangent">
-        <float_array id="Bob_pose_bones__Foot_R___location_Z-intangent-array" count="2">0.5 -0.7074294</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Z-intangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Bob_pose_bones__Foot_R___location_Z-outtangent">
-        <float_array id="Bob_pose_bones__Foot_R___location_Z-outtangent-array" count="2">0.5666667 -0.7074294</float_array>
-        <technique_common>
-          <accessor source="#Bob_pose_bones__Foot_R___location_Z-outtangent-array" count="1" stride="2">
-            <param name="X" type="float"/>
-            <param name="Y" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Bob_pose_bones__Foot_R___location_Z-sampler">
-        <input semantic="INPUT" source="#Bob_pose_bones__Foot_R___location_Z-input"/>
-        <input semantic="OUTPUT" source="#Bob_pose_bones__Foot_R___location_Z-output"/>
-        <input semantic="INTERPOLATION" source="#Bob_pose_bones__Foot_R___location_Z-interpolation"/>
-        <input semantic="IN_TANGENT" source="#Bob_pose_bones__Foot_R___location_Z-intangent"/>
-        <input semantic="OUT_TANGENT" source="#Bob_pose_bones__Foot_R___location_Z-outtangent"/>
-      </sampler>
-      <channel source="#Bob_pose_bones__Foot_R___location_Z-sampler" target="Bob/location.Z"/>
-    </animation>
-    <animation id="Armature_Abs_pose_matrix">
-      <source id="Armature_Abs_pose_matrix-input">
-        <float_array id="Armature_Abs_pose_matrix-input-array" count="3">0.0333333 0.6333333 1.2</float_array>
-        <technique_common>
-          <accessor source="#Armature_Abs_pose_matrix-input-array" count="3" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Abs_pose_matrix-output">
-        <float_array id="Armature_Abs_pose_matrix-output-array" count="48">1 0 0 0 0 0 -1 0 0 1 0 -2.558902 0 0 0 1 1 0 0 0 0 0 -1 0 0 1 0 -2.3005 0 0 0 1 1 0 0 0 0 0 -1 0 0 1 0 -2.558902 0 0 0 1</float_array>
-        <technique_common>
-          <accessor source="#Armature_Abs_pose_matrix-output-array" count="3" stride="16">
-            <param name="TRANSFORM" type="float4x4"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Abs_pose_matrix-interpolation">
-        <Name_array id="Armature_Abs_pose_matrix-interpolation-array" count="3">LINEAR LINEAR LINEAR</Name_array>
-        <technique_common>
-          <accessor source="#Armature_Abs_pose_matrix-interpolation-array" count="3" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Armature_Abs_pose_matrix-sampler">
-        <input semantic="INPUT" source="#Armature_Abs_pose_matrix-input"/>
-        <input semantic="OUTPUT" source="#Armature_Abs_pose_matrix-output"/>
-        <input semantic="INTERPOLATION" source="#Armature_Abs_pose_matrix-interpolation"/>
-      </sampler>
-      <channel source="#Armature_Abs_pose_matrix-sampler" target="Abs/transform"/>
-    </animation>
-    <animation id="Armature_Chest_pose_matrix">
-      <source id="Armature_Chest_pose_matrix-input">
-        <float_array id="Armature_Chest_pose_matrix-input-array" count="3">0.0333333 0.6333333 1.2</float_array>
-        <technique_common>
-          <accessor source="#Armature_Chest_pose_matrix-input-array" count="3" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Chest_pose_matrix-output">
-        <float_array id="Armature_Chest_pose_matrix-output-array" count="48">1 0 0 0 0 0.9935327 -0.1135463 2.829917 0 0.1135463 0.9935327 0 0 0 0 1 1 0 0 0 0 0.9982082 -0.05983741 2.829917 0 0.05983741 0.9982082 0 0 0 0 1 1 0 0 0 0 0.9935327 -0.1135463 2.829917 0 0.1135463 0.9935327 0 0 0 0 1</float_array>
-        <technique_common>
-          <accessor source="#Armature_Chest_pose_matrix-output-array" count="3" stride="16">
-            <param name="TRANSFORM" type="float4x4"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Chest_pose_matrix-interpolation">
-        <Name_array id="Armature_Chest_pose_matrix-interpolation-array" count="3">LINEAR LINEAR LINEAR</Name_array>
-        <technique_common>
-          <accessor source="#Armature_Chest_pose_matrix-interpolation-array" count="3" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Armature_Chest_pose_matrix-sampler">
-        <input semantic="INPUT" source="#Armature_Chest_pose_matrix-input"/>
-        <input semantic="OUTPUT" source="#Armature_Chest_pose_matrix-output"/>
-        <input semantic="INTERPOLATION" source="#Armature_Chest_pose_matrix-interpolation"/>
-      </sampler>
-      <channel source="#Armature_Chest_pose_matrix-sampler" target="Chest/transform"/>
-    </animation>
-    <animation id="Armature_Head_pose_matrix">
-      <source id="Armature_Head_pose_matrix-input">
-        <float_array id="Armature_Head_pose_matrix-input-array" count="3">0.0333333 0.6333333 1.2</float_array>
-        <technique_common>
-          <accessor source="#Armature_Head_pose_matrix-input-array" count="3" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Head_pose_matrix-output">
-        <float_array id="Armature_Head_pose_matrix-output-array" count="48">-1 7.10543e-15 3.89414e-7 0 8.27833e-8 0.9771433 0.212584 2.786294 -3.80514e-7 0.2125843 -0.9771428 -1.11759e-8 0 0 0 1 -1 -5.32907e-15 3.89414e-7 0 1.11192e-7 0.9583683 0.2855366 2.786294 -3.73202e-7 0.2855369 -0.9583678 -1.11759e-8 0 0 0 1 -1 7.10543e-15 3.89414e-7 0 8.27833e-8 0.9771433 0.212584 2.786294 -3.80514e-7 0.2125843 -0.9771428 -1.11759e-8 0 0 0 1</float_array>
-        <technique_common>
-          <accessor source="#Armature_Head_pose_matrix-output-array" count="3" stride="16">
-            <param name="TRANSFORM" type="float4x4"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Head_pose_matrix-interpolation">
-        <Name_array id="Armature_Head_pose_matrix-interpolation-array" count="3">LINEAR LINEAR LINEAR</Name_array>
-        <technique_common>
-          <accessor source="#Armature_Head_pose_matrix-interpolation-array" count="3" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Armature_Head_pose_matrix-sampler">
-        <input semantic="INPUT" source="#Armature_Head_pose_matrix-input"/>
-        <input semantic="OUTPUT" source="#Armature_Head_pose_matrix-output"/>
-        <input semantic="INTERPOLATION" source="#Armature_Head_pose_matrix-interpolation"/>
-      </sampler>
-      <channel source="#Armature_Head_pose_matrix-sampler" target="Head/transform"/>
-    </animation>
-    <animation id="Armature_Hand_L_pose_matrix">
-      <source id="Armature_Hand_L_pose_matrix-input">
-        <float_array id="Armature_Hand_L_pose_matrix-input-array" count="3">0.0333333 0.6333333 1.2</float_array>
-        <technique_common>
-          <accessor source="#Armature_Hand_L_pose_matrix-input-array" count="3" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Hand_L_pose_matrix-output">
-        <float_array id="Armature_Hand_L_pose_matrix-output-array" count="48">1 0 -8.74228e-8 2.130945 -8.74228e-8 0 -1 -0.8588248 0 1 0 0.1082807 0 0 0 1 1 0 -8.74228e-8 2.172452 -8.74228e-8 0 -1 -0.8588247 0 1 0 0.1082807 0 0 0 1 1 0 -8.74228e-8 2.130945 -8.74228e-8 0 -1 -0.8588248 0 1 0 0.1082807 0 0 0 1</float_array>
-        <technique_common>
-          <accessor source="#Armature_Hand_L_pose_matrix-output-array" count="3" stride="16">
-            <param name="TRANSFORM" type="float4x4"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Hand_L_pose_matrix-interpolation">
-        <Name_array id="Armature_Hand_L_pose_matrix-interpolation-array" count="3">LINEAR LINEAR LINEAR</Name_array>
-        <technique_common>
-          <accessor source="#Armature_Hand_L_pose_matrix-interpolation-array" count="3" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Armature_Hand_L_pose_matrix-sampler">
-        <input semantic="INPUT" source="#Armature_Hand_L_pose_matrix-input"/>
-        <input semantic="OUTPUT" source="#Armature_Hand_L_pose_matrix-output"/>
-        <input semantic="INTERPOLATION" source="#Armature_Hand_L_pose_matrix-interpolation"/>
-      </sampler>
-      <channel source="#Armature_Hand_L_pose_matrix-sampler" target="Hand_L/transform"/>
-    </animation>
-    <animation id="Armature_Hand_R_pose_matrix">
-      <source id="Armature_Hand_R_pose_matrix-input">
-        <float_array id="Armature_Hand_R_pose_matrix-input-array" count="3">0.0333333 0.6333333 1.2</float_array>
-        <technique_common>
-          <accessor source="#Armature_Hand_R_pose_matrix-input-array" count="3" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Hand_R_pose_matrix-output">
-        <float_array id="Armature_Hand_R_pose_matrix-output-array" count="48">1 0 -3.25841e-7 -2.130945 -3.25841e-7 0 -1 -0.8588248 -3.55271e-15 1 0 0.1082807 0 0 0 1 1 0 -3.25841e-7 -2.172454 -3.25841e-7 0 -1 -0.8588247 -3.55271e-15 1 0 0.1082807 0 0 0 1 1 0 -3.25841e-7 -2.130945 -3.25841e-7 0 -1 -0.8588248 -3.55271e-15 1 0 0.1082807 0 0 0 1</float_array>
-        <technique_common>
-          <accessor source="#Armature_Hand_R_pose_matrix-output-array" count="3" stride="16">
-            <param name="TRANSFORM" type="float4x4"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Hand_R_pose_matrix-interpolation">
-        <Name_array id="Armature_Hand_R_pose_matrix-interpolation-array" count="3">LINEAR LINEAR LINEAR</Name_array>
-        <technique_common>
-          <accessor source="#Armature_Hand_R_pose_matrix-interpolation-array" count="3" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Armature_Hand_R_pose_matrix-sampler">
-        <input semantic="INPUT" source="#Armature_Hand_R_pose_matrix-input"/>
-        <input semantic="OUTPUT" source="#Armature_Hand_R_pose_matrix-output"/>
-        <input semantic="INTERPOLATION" source="#Armature_Hand_R_pose_matrix-interpolation"/>
-      </sampler>
-      <channel source="#Armature_Hand_R_pose_matrix-sampler" target="Hand_R/transform"/>
-    </animation>
-    <animation id="Armature_Foot_L_pose_matrix">
-      <source id="Armature_Foot_L_pose_matrix-input">
-        <float_array id="Armature_Foot_L_pose_matrix-input-array" count="3">0.0333333 0.6333333 1.2</float_array>
-        <technique_common>
-          <accessor source="#Armature_Foot_L_pose_matrix-input-array" count="3" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Foot_L_pose_matrix-output">
-        <float_array id="Armature_Foot_L_pose_matrix-output-array" count="48">0.9660285 0.2584215 -0.00271678 1.256503 0.2197159 -0.8157138 0.5351039 -0.1601976 0.1360663 -0.5175225 -0.844782 -4.452898 0 0 0 1 0.9660285 0.2584215 -0.00271678 1.256503 0.2197159 -0.8157138 0.5351039 -0.1601976 0.1360663 -0.5175225 -0.844782 -4.452898 0 0 0 1 0.9660285 0.2584215 -0.00271678 1.256503 0.2197159 -0.8157138 0.5351039 -0.1601976 0.1360663 -0.5175225 -0.844782 -4.452898 0 0 0 1</float_array>
-        <technique_common>
-          <accessor source="#Armature_Foot_L_pose_matrix-output-array" count="3" stride="16">
-            <param name="TRANSFORM" type="float4x4"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Foot_L_pose_matrix-interpolation">
-        <Name_array id="Armature_Foot_L_pose_matrix-interpolation-array" count="3">LINEAR LINEAR LINEAR</Name_array>
-        <technique_common>
-          <accessor source="#Armature_Foot_L_pose_matrix-interpolation-array" count="3" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Armature_Foot_L_pose_matrix-sampler">
-        <input semantic="INPUT" source="#Armature_Foot_L_pose_matrix-input"/>
-        <input semantic="OUTPUT" source="#Armature_Foot_L_pose_matrix-output"/>
-        <input semantic="INTERPOLATION" source="#Armature_Foot_L_pose_matrix-interpolation"/>
-      </sampler>
-      <channel source="#Armature_Foot_L_pose_matrix-sampler" target="Foot_L/transform"/>
-    </animation>
-    <animation id="Armature_Foot_R_pose_matrix">
-      <source id="Armature_Foot_R_pose_matrix-input">
-        <float_array id="Armature_Foot_R_pose_matrix-input-array" count="3">0.0333333 0.6333333 1.2</float_array>
-        <technique_common>
-          <accessor source="#Armature_Foot_R_pose_matrix-input-array" count="3" stride="1">
-            <param name="TIME" type="float"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Foot_R_pose_matrix-output">
-        <float_array id="Armature_Foot_R_pose_matrix-output-array" count="48">0.9660285 -0.2584216 -0.00271675 -1.256503 -0.2167027 -0.8157137 0.5363312 -0.1601976 -0.1408157 -0.5175225 -0.8440033 -4.452898 0 0 0 1 0.9660285 -0.2584216 -0.00271675 -1.256503 -0.2167027 -0.8157137 0.5363312 -0.1601976 -0.1408157 -0.5175225 -0.8440033 -4.452898 0 0 0 1 0.9660285 -0.2584216 -0.00271675 -1.256503 -0.2167027 -0.8157137 0.5363312 -0.1601976 -0.1408157 -0.5175225 -0.8440033 -4.452898 0 0 0 1</float_array>
-        <technique_common>
-          <accessor source="#Armature_Foot_R_pose_matrix-output-array" count="3" stride="16">
-            <param name="TRANSFORM" type="float4x4"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <source id="Armature_Foot_R_pose_matrix-interpolation">
-        <Name_array id="Armature_Foot_R_pose_matrix-interpolation-array" count="3">LINEAR LINEAR LINEAR</Name_array>
-        <technique_common>
-          <accessor source="#Armature_Foot_R_pose_matrix-interpolation-array" count="3" stride="1">
-            <param name="INTERPOLATION" type="name"/>
-          </accessor>
-        </technique_common>
-      </source>
-      <sampler id="Armature_Foot_R_pose_matrix-sampler">
-        <input semantic="INPUT" source="#Armature_Foot_R_pose_matrix-input"/>
-        <input semantic="OUTPUT" source="#Armature_Foot_R_pose_matrix-output"/>
-        <input semantic="INTERPOLATION" source="#Armature_Foot_R_pose_matrix-interpolation"/>
-      </sampler>
-      <channel source="#Armature_Foot_R_pose_matrix-sampler" target="Foot_R/transform"/>
-    </animation>
-  </library_animations>
-  <library_controllers>
-    <controller id="Armature_Bob-skin" name="Armature">
-      <skin source="#Cube-mesh">
-        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
-        <source id="Armature_Bob-skin-joints">
-          <Name_array id="Armature_Bob-skin-joints-array" count="7">Abs Chest Head Hand_L Foot_L Hand_R Foot_R</Name_array>
-          <technique_common>
-            <accessor source="#Armature_Bob-skin-joints-array" count="7" stride="1">
-              <param name="JOINT" type="name"/>
-            </accessor>
-          </technique_common>
-        </source>
-        <source id="Armature_Bob-skin-bind_poses">
-          <float_array id="Armature_Bob-skin-bind_poses-array" count="112">1 0 0 0 0 0 1 2.558902 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 -0.2710152 0 -1 0 0 0 0 0 1 -1 3.68967e-7 1.24526e-7 -3.80716e-7 0 -0.3197784 0.9474917 -2.896775 3.89414e-7 0.9474924 0.3197787 -0.9776623 0 0 0 1 1 0 0 -2.49411 0 -1 0 0 0 0 -1 0.3596494 0 0 0 1 0.9660285 0.2197158 0.1360662 -0.5727308 0.2584215 -0.8157137 -0.5175223 -2.759857 -0.002716779 0.5351037 -0.8447818 -3.672591 0 0 0 1 1 0 -3.25841e-7 2.49411 0 -1 0 0 -3.27826e-7 0 -1 0.3596484 0 0 0 1 0.9660284 -0.2167026 -0.1408156 0.5520648 -0.2584217 -0.8157138 -0.5175225 -2.759857 -0.002716958 0.5363311 -0.8440032 -3.675755 0 0 0 1</float_array>
-          <technique_common>
-            <accessor source="#Armature_Bob-skin-bind_poses-array" count="7" stride="16">
-              <param name="TRANSFORM" type="float4x4"/>
-            </accessor>
-          </technique_common>
-        </source>
-        <source id="Armature_Bob-skin-weights">
-          <float_array id="Armature_Bob-skin-weights-array" count="82">0.9232075 0.07679241 0.9251894 0.07481056 0.1058948 0.8941051 1 1 1 1 1 1 1 1 1 0.4646239 0.5353761 0.09026354 0.9097365 0.01475554 0.9852445 1 1 1 1 1 1 1 1 0.01397556 0.9860244 0.01296776 0.9778631 0.009169042 0.9232075 0.07679241 0.9251894 0.07481056 0.1058948 0.8941051 1 1 1 1 1 1 1 1 1 0.4646239 0.5353761 0.09026354 0.9097365 0.01475554 0.9852445 1 0.04140633 0.9585937 1 1 1 1 1 1 1 1 1 0.01397556 0.9860244 0.01296776 0.9778631 0.009169042 0.9528115 0.04718852 0.9372125 0.06278741 0.08848839 0.9115116 0.4905047 0.5094953 1 1</float_array>
-          <technique_common>
-            <accessor source="#Armature_Bob-skin-weights-array" count="82" stride="1">
-              <param name="WEIGHT" type="float"/>
-            </accessor>
-          </technique_common>
-        </source>
-        <joints>
-          <input semantic="JOINT" source="#Armature_Bob-skin-joints"/>
-          <input semantic="INV_BIND_MATRIX" source="#Armature_Bob-skin-bind_poses"/>
-        </joints>
-        <vertex_weights count="59">
-          <input semantic="JOINT" source="#Armature_Bob-skin-joints" offset="0"/>
-          <input semantic="WEIGHT" source="#Armature_Bob-skin-weights" offset="1"/>
-          <vcount>2 2 2 1 1 1 1 1 1 1 1 1 2 2 2 1 1 1 1 1 1 1 1 2 3 2 2 2 1 1 1 1 1 1 1 1 1 2 2 2 1 2 1 1 1 1 1 1 1 1 1 2 3 2 2 2 2 1 1 </vcount>
-          <v>0 0 1 1 0 2 1 3 1 4 2 5 2 6 3 7 3 8 3 9 3 10 3 11 3 12 3 13 3 14 1 15 2 16 1 17 2 18 1 19 2 20 4 21 4 22 4 23 4 24 4 25 4 26 4 27 4 28 0 29 1 30 0 31 1 32 2 33 0 34 1 35 0 36 1 37 1 38 2 39 2 40 5 41 5 42 5 43 5 44 5 45 5 46 5 47 5 48 1 49 2 50 1 51 2 52 1 53 2 54 2 55 1 56 2 57 2 58 6 59 6 60 6 61 6 62 6 63 6 64 6 65 6 66 0 67 1 68 0 69 1 70 2 71 0 72 1 73 0 74 1 75 1 76 2 77 1 78 2 79 1 80 1 81</v>
-        </vertex_weights>
-      </skin>
-    </controller>
-  </library_controllers>
-  <library_visual_scenes>
-    <visual_scene id="Scene" name="Scene">
-      <node id="Camera" name="Camera" type="NODE">
-        <translate sid="location">7.481132 -6.50764 -0.1747322</translate>
-        <rotate sid="rotationZ">0 0 1 46.69194</rotate>
-        <rotate sid="rotationY">0 1 0 0.619768</rotate>
-        <rotate sid="rotationX">1 0 0 63.5593</rotate>
-        <scale sid="scale">1 0.9999999 1</scale>
-        <instance_camera url="#Camera-camera"/>
-      </node>
-      <node id="Lamp" name="Lamp" type="NODE">
-        <translate sid="location">4.076245 1.005454 0.3854647</translate>
-        <rotate sid="rotationZ">0 0 1 106.9363</rotate>
-        <rotate sid="rotationY">0 1 0 3.163707</rotate>
-        <rotate sid="rotationX">1 0 0 37.26105</rotate>
-        <scale sid="scale">1 0.9999999 1</scale>
-        <instance_light url="#Lamp-light"/>
-      </node>
-      <node id="Armature" name="Armature" type="NODE">
-        <translate sid="location">0 0 0</translate>
-        <rotate sid="rotationZ">0 0 1 0</rotate>
-        <rotate sid="rotationY">0 1 0 0</rotate>
-        <rotate sid="rotationX">1 0 0 0</rotate>
-        <scale sid="scale">1 1 1</scale>
-        <node id="Abs" name="Abs" sid="Abs" type="JOINT">
-          <matrix sid="transform">1 0 0 0 0 0 -1 0 0 1 0 -2.558902 0 0 0 1</matrix>
-          <node id="Chest" name="Chest" sid="Chest" type="JOINT">
-            <matrix sid="transform">1 0 0 0 0 1 0 2.829917 0 0 1 0 0 0 0 1</matrix>
-            <node id="Head" name="Head" sid="Head" type="JOINT">
-              <matrix sid="transform">-1 0 3.89414e-7 0 1.24526e-7 0.9474928 0.3197786 2.786294 -3.68967e-7 0.3197789 -0.9474922 0 0 0 0 1</matrix>
-              <extra>
-                <technique profile="blender">
-                  <connect>1</connect>
-                  <layer>0</layer>
-                  <roll>3.141592</roll>
-                  <tip_x>0</tip_x>
-                  <tip_y>-0.5083104</tip_y>
-                  <tip_z>1.506104</tip_z>
-                </technique>
-              </extra>
-            </node>
-            <node id="Hand_L" name="Hand.L" sid="Hand_L" type="JOINT">
-              <matrix sid="transform">1 0 -8.74228e-8 2.49411 -8.74228e-8 0 -1 0.08863401 0 1 0 0 0 0 0 1</matrix>
-              <extra>
-                <technique profile="blender">
-                  <layer>0</layer>
-                  <roll>-3.141593</roll>
-                  <tip_x>0</tip_x>
-                  <tip_y>-1</tip_y>
-                  <tip_z>0</tip_z>
-                </technique>
-              </extra>
-            </node>
-            <node id="Hand_R" name="Hand.R" sid="Hand_R" type="JOINT">
-              <matrix sid="transform">1 0 -3.25841e-7 -2.49411 -3.25841e-7 0 -1 0.08863401 0 1 0 0 0 0 0 1</matrix>
-              <extra>
-                <technique profile="blender">
-                  <layer>0</layer>
-                  <roll>-3.141593</roll>
-                  <tip_x>0</tip_x>
-                  <tip_y>-1</tip_y>
-                  <tip_z>0</tip_z>
-                </technique>
-              </extra>
-            </node>
-            <extra>
-              <technique profile="blender">
-                <connect>1</connect>
-                <layer>0</layer>
-              </technique>
-            </extra>
-          </node>
-          <extra>
-            <technique profile="blender">
-              <layer>0</layer>
-            </technique>
-          </extra>
-        </node>
-        <node id="Foot_L" name="Foot.L" sid="Foot_L" type="JOINT">
-          <matrix sid="transform">0.9660285 0.2584215 -0.00271678 1.256503 0.2197159 -0.8157138 0.5351039 -0.1601976 0.1360663 -0.5175225 -0.844782 -4.452898 0 0 0 1</matrix>
-          <extra>
-            <technique profile="blender">
-              <layer>0</layer>
-              <roll>-0.8527367</roll>
-              <tip_x>0.3485928</tip_x>
-              <tip_y>-1.100341</tip_y>
-              <tip_z>-0.698102</tip_z>
-            </technique>
-          </extra>
-        </node>
-        <node id="Foot_R" name="Foot.R" sid="Foot_R" type="JOINT">
-          <matrix sid="transform">0.9660285 -0.2584216 -0.00271675 -1.256503 -0.2167027 -0.8157137 0.5363312 -0.1601976 -0.1408157 -0.5175225 -0.8440033 -4.452898 0 0 0 1</matrix>
-          <extra>
-            <technique profile="blender">
-              <layer>0</layer>
-              <roll>0.8471122</roll>
-              <tip_x>-0.3485928</tip_x>
-              <tip_y>-1.100341</tip_y>
-              <tip_z>-0.698102</tip_z>
-            </technique>
-          </extra>
-        </node>
-      </node>
-      <node id="Bob" name="Bob" type="NODE">
-        <translate sid="location">0 0 0</translate>
-        <rotate sid="rotationZ">0 0 1 0</rotate>
-        <rotate sid="rotationY">0 1 0 0</rotate>
-        <rotate sid="rotationX">1 0 0 0</rotate>
-        <scale sid="scale">1 1 1</scale>
-        <instance_controller url="#Armature_Bob-skin">
-          <skeleton>#Abs</skeleton>
-          <skeleton>#Foot_L</skeleton>
-          <skeleton>#Foot_R</skeleton>
-          <bind_material>
-            <technique_common>
-              <instance_material symbol="Material-material" target="#Material-material"/>
-            </technique_common>
-          </bind_material>
-        </instance_controller>
-      </node>
-    </visual_scene>
-  </library_visual_scenes>
-  <scene>
-    <instance_visual_scene url="#Scene"/>
-  </scene>
+<asset>
+	<contributor>
+		<author>Anonymous</author>
+		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
+	</contributor>
+	<created>2017-04-27T10:08:48Z</created>
+	<modified>2017-04-27T10:08:48Z</modified>
+	<unit meter="1.0" name="meter"/>
+	<up_axis>Z_UP</up_axis>
+</asset>
+<library_effects>
+	<effect id="id-fx-10" name="Material-fx">
+		<profile_COMMON>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<color>  0.6400000190734865 0.6400000190734865 0.6400000190734865 1.0 </color>
+					</diffuse>
+					<specular>
+						<color>  0.5 0.5 0.5 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+</library_effects>
+<library_materials>
+	<material id="id-material-11" name="Material">
+		<instance_effect url="#id-fx-10"/>
+	</material>
+</library_materials>
+<library_geometries>
+	<geometry id="id-mesh-12" name="Cube">
+		<mesh>
+			<source id="id-mesh-12-positions">
+				<float_array id="id-mesh-12-positions-array" count="582"> 1.0000004768371582 0.9999995231628418 4.742140769958496 0.0 0.9999997615814209 4.742140769958496 0.0 -1.0000001192092896 4.742140769958496 0.9999993443489075 -1.0000005960464478 4.742140769958496 0.8778194189071655 0.8778188228607178 3.107637405395508 1.0000004768371582 0.9999995231628418 4.742140769958496 0.9999993443489075 -1.0000005960464478 4.742140769958496 0.9389089941978455 -0.9389100074768066 3.92488956451416 0.8778186440467834 -0.8778195381164551 3.107637405395508 2.027165412902832 -0.46694397926330566 0.8265939950942993 2.027165412902832 0.46694400906562805 0.8265939950942993 2.027165412902832 0.46694400906562805 -0.1072949469089508 2.027165412902832 -0.46694397926330566 -0.1072949469089508 2.027165412902832 0.46694400906562805 0.8265939950942993 2.9610533714294434 0.46694400906562805 0.8265939950942993 2.9610533714294434 0.46694400906562805 -0.1072949469089508 2.027165412902832 0.46694400906562805 -0.1072949469089508 2.9610533714294434 0.46694400906562805 0.8265939950942993 2.9610533714294434 -0.46694397926330566 0.8265939950942993 2.9610533714294434 -0.46694397926330566 -0.1072949469089508 2.9610533714294434 0.46694400906562805 -0.1072949469089508 2.9610533714294434 -0.46694397926330566 0.8265939950942993 2.027165412902832 -0.46694397926330566 0.8265939950942993 2.027165412902832 -0.46694397926330566 -0.1072949469089508 2.9610533714294434 -0.46694397926330566 -0.1072949469089508 2.027165412902832 -0.46694397926330566 -0.1072949469089508 2.027165412902832 0.46694400906562805 -0.1072949469089508 2.9610533714294434 0.46694400906562805 -0.1072949469089508 2.9610533714294434 -0.46694397926330566 -0.1072949469089508 2.9610533714294434 -0.46694397926330566 0.8265939950942993 2.9610533714294434 0.46694400906562805 0.8265939950942993 2.027165412902832 0.46694400906562805 0.8265939950942993 2.027165412902832 -0.46694397926330566 0.8265939950942993 0.7861146926879883 -0.7861150503158569 0.3551560640335083 0.8778186440467834 -0.8778195381164551 3.107637405395508 0.0 -0.8778191804885864 3.107637405395508 0.0 -0.7861148118972778 0.3551560640335083 0.7861149311065674 0.7861148118972778 0.3551560640335083 0.8778194189071655 0.8778188228607178 3.107637405395508 0.8778186440467834 -0.8778195381164551 3.107637405395508 0.7861146926879883 -0.7861150503158569 0.3551560640335083 0.8778186440467834 -0.8778195381164551 3.107637405395508 0.9389089941978455 -0.9389100074768066 3.92488956451416 0.0 -1.559916377067566 3.92488956451416 0.0 -0.8778191804885864 3.107637405395508 0.9389089941978455 -0.9389100074768066 3.92488956451416 0.9999993443489075 -1.0000005960464478 4.742140769958496 0.0 -1.0000001192092896 4.742140769958496 0.0 -1.559916377067566 3.92488956451416 0.9711827635765076 -1.811731219291687 -4.97440242767334 0.4951210021972656 -0.4164358377456665 -3.971728801727295 0.4951210021972656 -0.4164358377456665 -5.446002960205078 0.9711827635765076 -1.811731219291687 -5.446002960205078 0.4951210021972656 -0.4164358377456665 -3.971728801727295 1.8904163837432861 0.05962592363357544 -3.971728801727295 1.8904163837432861 0.05962592363357544 -5.446002960205078 0.4951210021972656 -0.4164358377456665 -5.446002960205078 1.8904163837432861 0.05962592363357544 -3.971728801727295 2.366478204727173 -1.3356695175170898 -4.97440242767334 2.366478204727173 -1.3356695175170898 -5.446002960205078 1.8904163837432861 0.05962592363357544 -5.446002960205078 2.366478204727173 -1.3356695175170898 -4.97440242767334 0.9711827635765076 -1.811731219291687 -4.97440242767334 0.9711827635765076 -1.811731219291687 -5.446002960205078 2.366478204727173 -1.3356695175170898 -5.446002960205078 0.9711827635765076 -1.811731219291687 -5.446002960205078 0.4951210021972656 -0.4164358377456665 -5.446002960205078 1.8904163837432861 0.05962592363357544 -5.446002960205078 2.366478204727173 -1.3356695175170898 -5.446002960205078 2.366478204727173 -1.3356695175170898 -4.97440242767334 1.8904163837432861 0.05962592363357544 -3.971728801727295 0.4951210021972656 -0.4164358377456665 -3.971728801727295 0.9711827635765076 -1.811731219291687 -4.97440242767334 0.9999999403953552 1.0 -2.613126516342163 0.7861149311065674 0.7861148118972778 0.3551560640335083 0.7861146926879883 -0.7861150503158569 0.3551560640335083 0.9999999403953552 -1.0 -2.613126516342163 0.8778194189071655 0.8778188228607178 3.107637405395508 0.7861149311065674 0.7861148118972778 0.3551560640335083 0.0 0.7861149311065674 0.3551560640335083 0.0 0.8778190612792969 3.107637405395508 0.9999999403953552 -1.0 -2.613126516342163 0.7861146926879883 -0.7861150503158569 0.3551560640335083 0.0 -0.7861148118972778 0.3551560640335083 0.0 -0.9999998807907104 -2.613126516342163 1.0000004768371582 0.9999995231628418 4.742140769958496 0.8778194189071655 0.8778188228607178 3.107637405395508 0.0 0.8778190612792969 3.107637405395508 0.0 0.9999997615814209 4.742140769958496 0.7861149311065674 0.7861148118972778 0.3551560640335083 0.9999999403953552 1.0 -2.613126516342163 0.0 1.000000238418579 -2.613126516342163 0.0 0.7861149311065674 0.3551560640335083 0.9999999403953552 1.0 -2.613126516342163 0.9999999403953552 -1.0 -2.613126516342163 0.0 -0.9999998807907104 -2.613126516342163 0.0 1.000000238418579 -2.613126516342163 -1.0000004768371582 0.9999995231628418 4.742140769958496 -0.9999993443489075 -1.0000005960464478 4.742140769958496 0.0 -1.0000001192092896 4.742140769958496 0.0 0.9999997615814209 4.742140769958496 -0.8778194189071655 0.8778188228607178 3.107637405395508 -0.8778186440467834 -0.8778195381164551 3.107637405395508 -0.9389089941978455 -0.9389100074768066 3.92488956451416 -0.9999993443489075 -1.0000005960464478 4.742140769958496 -1.0000004768371582 0.9999995231628418 4.742140769958496 -2.027165412902832 -0.46694397926330566 0.8265939950942993 -2.027165412902832 -0.46694397926330566 -0.1072949469089508 -2.027165412902832 0.46694400906562805 -0.1072949469089508 -2.027165412902832 0.46694400906562805 0.8265939950942993 -2.027165412902832 0.46694400906562805 0.8265939950942993 -2.027165412902832 0.46694400906562805 -0.1072949469089508 -2.9610533714294434 0.46694400906562805 -0.1072949469089508 -2.9610533714294434 0.46694400906562805 0.8265939950942993 -2.9610533714294434 0.46694400906562805 0.8265939950942993 -2.9610533714294434 0.46694400906562805 -0.1072949469089508 -2.9610533714294434 -0.46694397926330566 -0.1072949469089508 -2.9610533714294434 -0.46694397926330566 0.8265939950942993 -2.9610533714294434 -0.46694397926330566 0.8265939950942993 -2.9610533714294434 -0.46694397926330566 -0.1072949469089508 -2.027165412902832 -0.46694397926330566 -0.1072949469089508 -2.027165412902832 -0.46694397926330566 0.8265939950942993 -2.027165412902832 -0.46694397926330566 -0.1072949469089508 -2.9610533714294434 -0.46694397926330566 -0.1072949469089508 -2.9610533714294434 0.46694400906562805 -0.1072949469089508 -2.027165412902832 0.46694400906562805 -0.1072949469089508 -2.9610533714294434 -0.46694397926330566 0.8265939950942993 -2.027165412902832 -0.46694397926330566 0.8265939950942993 -2.027165412902832 0.46694400906562805 0.8265939950942993 -2.9610533714294434 0.46694400906562805 0.8265939950942993 -0.7861146926879883 -0.7861150503158569 0.3551560640335083 0.0 -0.7861148118972778 0.3551560640335083 0.0 -0.8778191804885864 3.107637405395508 -0.8778186440467834 -0.8778195381164551 3.107637405395508 -0.7861149311065674 0.7861148118972778 0.3551560640335083 -0.7861146926879883 -0.7861150503158569 0.3551560640335083 -0.8778186440467834 -0.8778195381164551 3.107637405395508 -0.8778194189071655 0.8778188228607178 3.107637405395508 -0.8778186440467834 -0.8778195381164551 3.107637405395508 0.0 -0.8778191804885864 3.107637405395508 0.0 -1.559916377067566 3.92488956451416 -0.9389089941978455 -0.9389100074768066 3.92488956451416 -0.9389089941978455 -0.9389100074768066 3.92488956451416 0.0 -1.559916377067566 3.92488956451416 0.0 -1.0000001192092896 4.742140769958496 -0.9999993443489075 -1.0000005960464478 4.742140769958496 -0.9711827635765076 -1.811731219291687 -4.97440242767334 -0.9711827635765076 -1.811731219291687 -5.446002960205078 -0.4951210021972656 -0.4164358377456665 -5.446002960205078 -0.4951210021972656 -0.4164358377456665 -3.971728801727295 -0.4951210021972656 -0.4164358377456665 -3.971728801727295 -0.4951210021972656 -0.4164358377456665 -5.446002960205078 -1.8904163837432861 0.05962592363357544 -5.446002960205078 -1.8904163837432861 0.05962592363357544 -3.971728801727295 -1.8904163837432861 0.05962592363357544 -3.971728801727295 -1.8904163837432861 0.05962592363357544 -5.446002960205078 -2.366478204727173 -1.3356695175170898 -5.446002960205078 -2.366478204727173 -1.3356695175170898 -4.97440242767334 -2.366478204727173 -1.3356695175170898 -4.97440242767334 -2.366478204727173 -1.3356695175170898 -5.446002960205078 -0.9711827635765076 -1.811731219291687 -5.446002960205078 -0.9711827635765076 -1.811731219291687 -4.97440242767334 -0.9711827635765076 -1.811731219291687 -5.446002960205078 -2.366478204727173 -1.3356695175170898 -5.446002960205078 -1.8904163837432861 0.05962592363357544 -5.446002960205078 -0.4951210021972656 -0.4164358377456665 -5.446002960205078 -2.366478204727173 -1.3356695175170898 -4.97440242767334 -0.9711827635765076 -1.811731219291687 -4.97440242767334 -0.4951210021972656 -0.4164358377456665 -3.971728801727295 -1.8904163837432861 0.05962592363357544 -3.971728801727295 -0.9999999403953552 1.0 -2.613126516342163 -0.9999999403953552 -1.0 -2.613126516342163 -0.7861146926879883 -0.7861150503158569 0.3551560640335083 -0.7861149311065674 0.7861148118972778 0.3551560640335083 -0.8778194189071655 0.8778188228607178 3.107637405395508 0.0 0.8778190612792969 3.107637405395508 0.0 0.7861149311065674 0.3551560640335083 -0.7861149311065674 0.7861148118972778 0.3551560640335083 -0.9999999403953552 -1.0 -2.613126516342163 0.0 -0.9999998807907104 -2.613126516342163 0.0 -0.7861148118972778 0.3551560640335083 -0.7861146926879883 -0.7861150503158569 0.3551560640335083 -1.0000004768371582 0.9999995231628418 4.742140769958496 0.0 0.9999997615814209 4.742140769958496 0.0 0.8778190612792969 3.107637405395508 -0.8778194189071655 0.8778188228607178 3.107637405395508 -0.7861149311065674 0.7861148118972778 0.3551560640335083 0.0 0.7861149311065674 0.3551560640335083 0.0 1.000000238418579 -2.613126516342163 -0.9999999403953552 1.0 -2.613126516342163 -0.9999999403953552 1.0 -2.613126516342163 0.0 1.000000238418579 -2.613126516342163 0.0 -0.9999998807907104 -2.613126516342163 -0.9999999403953552 -1.0 -2.613126516342163</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-12-positions-array" count="194" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-12-normals">
+				<float_array id="id-mesh-12-normals-array" count="582"> 1.7694016207769891e-07 0.0 1.0 1.7694016207769891e-07 0.0 1.0 1.7694016207769891e-07 0.0 1.0 1.7694016207769891e-07 0.0 1.0 0.9972177147865295 -5.228706640991732e-07 -0.07454310357570648 0.9972177147865295 -5.228706640991732e-07 -0.07454310357570648 0.9972177147865295 -5.228706640991732e-07 -0.07454310357570648 0.9972177147865295 -5.228706640991732e-07 -0.07454310357570648 0.9972177147865295 -5.228706640991732e-07 -0.07454310357570648 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 -3.5769394912676944e-07 -0.9994454383850098 -0.03329852223396301 -3.5769394912676944e-07 -0.9994454383850098 -0.03329852223396301 -3.5769394912676944e-07 -0.9994454383850098 -0.03329852223396301 -3.5769394912676944e-07 -0.9994454383850098 -0.03329852223396301 0.9994454383850098 -3.1216913498610666e-07 -0.03329845145344734 0.9994454383850098 -3.1216913498610666e-07 -0.03329845145344734 0.9994454383850098 -3.1216913498610666e-07 -0.03329845145344734 0.9994454383850098 -3.1216913498610666e-07 -0.03329845145344734 0.2958052456378937 -0.8653656840324402 -0.4045262634754181 0.2958052456378937 -0.8653656840324402 -0.4045262634754181 0.2958052456378937 -0.8653656840324402 -0.4045262634754181 0.2958052456378937 -0.8653656840324402 -0.4045262634754181 0.29378408193588257 -0.9172544479370117 0.26895204186439514 0.29378408193588257 -0.9172544479370117 0.26895204186439514 0.29378408193588257 -0.9172544479370117 0.26895204186439514 0.29378408193588257 -0.9172544479370117 0.26895204186439514 -0.9464287757873535 -0.3229125738143921 0.0 -0.9464287757873535 -0.3229125738143921 0.0 -0.9464287757873535 -0.3229125738143921 0.0 -0.9464287757873535 -0.3229125738143921 0.0 -0.32291266322135925 0.9464287757873535 0.0 -0.32291266322135925 0.9464287757873535 0.0 -0.32291266322135925 0.9464287757873535 0.0 -0.32291266322135925 0.9464287757873535 0.0 0.9464288353919983 0.3229125142097473 0.0 0.9464288353919983 0.3229125142097473 0.0 0.9464288353919983 0.3229125142097473 0.0 0.9464288353919983 0.3229125142097473 0.0 0.3229125738143921 -0.9464287757873535 0.0 0.3229125738143921 -0.9464287757873535 0.0 0.3229125738143921 -0.9464287757873535 0.0 0.3229125738143921 -0.9464287757873535 0.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.1815977245569229 -0.5322470664978027 0.8268829584121704 0.1815977245569229 -0.5322470664978027 0.8268829584121704 0.1815977245569229 -0.5322470664978027 0.8268829584121704 0.1815977245569229 -0.5322470664978027 0.8268829584121704 0.9974139332771301 -4.48539694275496e-08 0.07187052071094513 0.9974139332771301 -4.48539694275496e-08 0.07187052071094513 0.9974139332771301 -4.48539694275496e-08 0.07187052071094513 0.9974139332771301 -4.48539694275496e-08 0.07187052071094513 2.1461623589402734e-07 0.9994454979896545 -0.03329839929938316 2.1461623589402734e-07 0.9994454979896545 -0.03329839929938316 2.1461623589402734e-07 0.9994454979896545 -0.03329839929938316 2.1461623589402734e-07 0.9994454979896545 -0.03329839929938316 -2.018428943983963e-07 -0.9974139928817749 0.07187046855688095 -2.018428943983963e-07 -0.9974139928817749 0.07187046855688095 -2.018428943983963e-07 -0.9974139928817749 0.07187046855688095 -2.018428943983963e-07 -0.9974139928817749 0.07187046855688095 2.5175245355057996e-07 0.9972177743911743 -0.07454300671815872 2.5175245355057996e-07 0.9972177743911743 -0.07454300671815872 2.5175245355057996e-07 0.9972177743911743 -0.07454300671815872 2.5175245355057996e-07 0.9972177743911743 -0.07454300671815872 2.0184286597668688e-07 0.9974139332771301 0.07187052071094513 2.0184286597668688e-07 0.9974139332771301 0.07187052071094513 2.0184286597668688e-07 0.9974139332771301 0.07187052071094513 2.0184286597668688e-07 0.9974139332771301 0.07187052071094513 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 -0.9972177743911743 -5.228707777860109e-07 -0.07454311847686768 -0.9972177743911743 -5.228707777860109e-07 -0.07454311847686768 -0.9972177743911743 -5.228707777860109e-07 -0.07454311847686768 -0.9972177743911743 -5.228707777860109e-07 -0.07454311847686768 -0.9972177743911743 -5.228707777860109e-07 -0.07454311847686768 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 0.0 0.9999999403953552 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 -0.9999999403953552 0.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 3.54983910710871e-07 -0.9994454383850098 -0.03329852223396301 3.54983910710871e-07 -0.9994454383850098 -0.03329852223396301 3.54983910710871e-07 -0.9994454383850098 -0.03329852223396301 3.54983910710871e-07 -0.9994454383850098 -0.03329852223396301 -0.9994454383850098 -3.1216913498610666e-07 -0.03329845145344734 -0.9994454383850098 -3.1216913498610666e-07 -0.03329845145344734 -0.9994454383850098 -3.1216913498610666e-07 -0.03329845145344734 -0.9994454383850098 -3.1216913498610666e-07 -0.03329845145344734 -0.2958052456378937 -0.8653656840324402 -0.4045262634754181 -0.2958052456378937 -0.8653656840324402 -0.4045262634754181 -0.2958052456378937 -0.8653656840324402 -0.4045262634754181 -0.2958052456378937 -0.8653656840324402 -0.4045262634754181 -0.29378393292427063 -0.9172544479370117 0.26895204186439514 -0.29378393292427063 -0.9172544479370117 0.26895204186439514 -0.29378393292427063 -0.9172544479370117 0.26895204186439514 -0.29378393292427063 -0.9172544479370117 0.26895204186439514 0.9464287757873535 -0.3229125738143921 0.0 0.9464287757873535 -0.3229125738143921 0.0 0.9464287757873535 -0.3229125738143921 0.0 0.9464287757873535 -0.3229125738143921 0.0 0.32291266322135925 0.9464287757873535 0.0 0.32291266322135925 0.9464287757873535 0.0 0.32291266322135925 0.9464287757873535 0.0 0.32291266322135925 0.9464287757873535 0.0 -0.9464288353919983 0.3229125142097473 0.0 -0.9464288353919983 0.3229125142097473 0.0 -0.9464288353919983 0.3229125142097473 0.0 -0.9464288353919983 0.3229125142097473 0.0 -0.3229125738143921 -0.9464287757873535 0.0 -0.3229125738143921 -0.9464287757873535 0.0 -0.3229125738143921 -0.9464287757873535 0.0 -0.3229125738143921 -0.9464287757873535 0.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 -0.18159767985343933 -0.5322470664978027 0.8268829584121704 -0.18159767985343933 -0.5322470664978027 0.8268829584121704 -0.18159767985343933 -0.5322470664978027 0.8268829584121704 -0.18159767985343933 -0.5322470664978027 0.8268829584121704 -0.9974139332771301 -4.48539694275496e-08 0.07187052071094513 -0.9974139332771301 -4.48539694275496e-08 0.07187052071094513 -0.9974139332771301 -4.48539694275496e-08 0.07187052071094513 -0.9974139332771301 -4.48539694275496e-08 0.07187052071094513 -2.156486829107962e-07 0.9994454979896545 -0.03329839929938316 -2.156486829107962e-07 0.9994454979896545 -0.03329839929938316 -2.156486829107962e-07 0.9994454979896545 -0.03329839929938316 -2.156486829107962e-07 0.9994454979896545 -0.03329839929938316 2.0006272904993239e-07 -0.9974139928817749 0.07187046855688095 2.0006272904993239e-07 -0.9974139928817749 0.07187046855688095 2.0006272904993239e-07 -0.9974139928817749 0.07187046855688095 2.0006272904993239e-07 -0.9974139928817749 0.07187046855688095 -2.5444234097449225e-07 0.9972177743911743 -0.07454300671815872 -2.5444234097449225e-07 0.9972177743911743 -0.07454300671815872 -2.5444234097449225e-07 0.9972177743911743 -0.07454300671815872 -2.5444234097449225e-07 0.9972177743911743 -0.07454300671815872 -2.0077771978321834e-07 0.9974139332771301 0.07187052071094513 -2.0077771978321834e-07 0.9974139332771301 0.07187052071094513 -2.0077771978321834e-07 0.9974139332771301 0.07187052071094513 -2.0077771978321834e-07 0.9974139332771301 0.07187052071094513 8.266410844726124e-08 0.0 -1.0 8.266410844726124e-08 0.0 -1.0 8.266410844726124e-08 0.0 -1.0 8.266410844726124e-08 0.0 -1.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-12-normals-array" count="194" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<vertices id="id-mesh-12-vertices">
+				<input semantic="POSITION" source="#id-mesh-12-positions"/>
+			</vertices>
+			<polygons count="48" material="id-trimat-13">
+				<input semantic="VERTEX" source="#id-mesh-12-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-12-normals" offset="0"/>
+				<p> 0 1 2 3 </p>
+				<p> 4 5 6 7 8 </p>
+				<p> 9 10 11 12 </p>
+				<p> 13 14 15 16 </p>
+				<p> 17 18 19 20 </p>
+				<p> 21 22 23 24 </p>
+				<p> 25 26 27 28 </p>
+				<p> 29 30 31 32 </p>
+				<p> 33 34 35 36 </p>
+				<p> 37 38 39 40 </p>
+				<p> 41 42 43 44 </p>
+				<p> 45 46 47 48 </p>
+				<p> 49 50 51 52 </p>
+				<p> 53 54 55 56 </p>
+				<p> 57 58 59 60 </p>
+				<p> 61 62 63 64 </p>
+				<p> 65 66 67 68 </p>
+				<p> 69 70 71 72 </p>
+				<p> 73 74 75 76 </p>
+				<p> 77 78 79 80 </p>
+				<p> 81 82 83 84 </p>
+				<p> 85 86 87 88 </p>
+				<p> 89 90 91 92 </p>
+				<p> 93 94 95 96 </p>
+				<p> 97 98 99 100 </p>
+				<p> 101 102 103 104 105 </p>
+				<p> 106 107 108 109 </p>
+				<p> 110 111 112 113 </p>
+				<p> 114 115 116 117 </p>
+				<p> 118 119 120 121 </p>
+				<p> 122 123 124 125 </p>
+				<p> 126 127 128 129 </p>
+				<p> 130 131 132 133 </p>
+				<p> 134 135 136 137 </p>
+				<p> 138 139 140 141 </p>
+				<p> 142 143 144 145 </p>
+				<p> 146 147 148 149 </p>
+				<p> 150 151 152 153 </p>
+				<p> 154 155 156 157 </p>
+				<p> 158 159 160 161 </p>
+				<p> 162 163 164 165 </p>
+				<p> 166 167 168 169 </p>
+				<p> 170 171 172 173 </p>
+				<p> 174 175 176 177 </p>
+				<p> 178 179 180 181 </p>
+				<p> 182 183 184 185 </p>
+				<p> 186 187 188 189 </p>
+				<p> 190 191 192 193 </p>
+			</polygons>
+		</mesh>
+	</geometry>
+</library_geometries>
+<library_controllers>
+	<controller id="id-controller-14">
+		<skin source="#id-mesh-12">
+			<bind_shape_matrix> 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0  </bind_shape_matrix>
+			<source id="id-controller-14-joints">
+				<Name_array id="id-controller-14-joints-array" count="7"> id-skelbones-2-0 id-skelbones-2-1 id-skelbones-2-2 id-skelbones-2-3 id-skelbones-2-4 id-skelbones-2-5 id-skelbones-2-6</Name_array>
+				<technique_common>
+				<accessor source="#id-controller-14-joints-array" count="7" stride="1">
+					<param name="JOINT" type="Name"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-controller-14-bind_poses">
+				<float_array id="id-controller-14-bind_poses-array" count="112">  1.0 -0.0 0.0 -0.0 -0.0 0.0 1.0 2.558901786804199 0.0 -1.0 0.0 -0.0 -0.0 0.0 -0.0 1.0    1.0 -0.0 0.0 -0.0 -0.0 0.0 1.0 -0.2710151672363281 0.0 -1.0 0.0 -0.0 -0.0 0.0 -0.0 1.0    -1.0 3.689671643769543e-07 1.2452643716187595e-07 -3.80715817982491e-07 2.8421692489745062e-14 -0.3197784423828125 0.9474917054176331 -2.896775007247925 3.8941439584050386e-07 0.9474923014640808 0.319778710603714 -0.9776623249053955 -0.0 -0.0 -0.0 1.0    1.0 -0.0 -8.742277657347586e-08 -2.494109630584717 -0.0 -1.0 -0.0 0.0 -8.742277657347586e-08 -0.0 -1.0 0.3596493899822235 -0.0 0.0 0.0 1.0    1.0 -0.0 -3.2584136988589307e-07 2.494109630584717 -0.0 -1.0 -0.0 0.0 -3.2584136988589307e-07 -0.0 -1.0 0.35964837670326233 -0.0 0.0 0.0 1.0    0.9660284519195557 0.21971580386161804 0.13606621325016022 -0.5727308392524719 0.2584215998649597 -0.81571364402771 -0.5175224542617798 -2.759857654571533 -0.0027167347725480795 0.5351037979125977 -0.8447819352149963 -3.6725916862487793 -0.0 0.0 -0.0 1.0    0.9660283923149109 -0.2167026698589325 -0.1408156454563141 0.5520647764205933 -0.2584215998649597 -0.81571364402771 -0.5175224542617798 -2.759857416152954 -0.002716772025451064 0.5363311767578125 -0.8440032005310059 -3.6757547855377197 -0.0 0.0 -0.0 1.0  </float_array>
+				<technique_common>
+				<accessor source="#id-controller-14-bind_poses-array" count="7" stride="16">
+					<param name="TRANSFORM" type="float4x4"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-controller-14-skin_weights">
+				<float_array id="id-controller-14-skin_weights-array" count="278"> 0.10587628185749054 0.8939482569694519 0.0884779691696167 0.9114038348197937 0.994988739490509 0.9832835793495178 0.46420952677726746 0.534898579120636 0.10587628185749054 0.8939482569694519 0.9832835793495178 0.014487686567008495 0.9673590064048767 0.09013931453227997 0.9084842801094055 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.012457311153411865 0.9393672943115234 0.00880812481045723 0.09013931453227997 0.9084842801094055 0.04118931666016579 0.9535685777664185 0.9588677287101746 0.013448345474898815 0.9488278031349182 0.46420952677726746 0.534898579120636 0.09013931453227997 0.9084842801094055 0.012457311153411865 0.9393672943115234 0.00880812481045723 0.09013931453227997 0.9084842801094055 0.014487686567008495 0.9673590064048767 0.9837915897369385 0.04118931666016579 0.9535685777664185 0.014487686567008495 0.9673590064048767 0.9832835793495178 0.994988739490509 0.9837915897369385 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.921712338924408 0.07666809111833572 0.013448345474898815 0.9488278031349182 0.012457311153411865 0.9393672943115234 0.00880812481045723 0.9231721758842468 0.07464749366044998 0.46420952677726746 0.534898579120636 0.013448345474898815 0.9488278031349182 0.9663050770759583 0.4902932047843933 0.5092756152153015 0.9231721758842468 0.07464749366044998 0.012457311153411865 0.9393672943115234 0.00880812481045723 0.9588677287101746 0.9357162714004517 0.06268718093633652 0.10587628185749054 0.8939482569694519 0.46420952677726746 0.534898579120636 0.4902932047843933 0.5092756152153015 0.0884779691696167 0.9114038348197937 0.013448345474898815 0.9488278031349182 0.921712338924408 0.07666809111833572 0.950567364692688 0.047077398747205734 0.9663050770759583 0.921712338924408 0.07666809111833572 0.9231721758842468 0.07464749366044998 0.9357162714004517 0.06268718093633652 0.950567364692688 0.047077398747205734 0.10587628185749054 0.8939482569694519 0.9832835793495178 0.994988739490509 0.0884779691696167 0.9114038348197937 0.46420952677726746 0.534898579120636 0.09013931453227997 0.9084842801094055 0.014487686567008495 0.9673590064048767 0.9832835793495178 0.10587628185749054 0.8939482569694519 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.012457311153411865 0.9393672943115234 0.00880812481045723 0.9588677287101746 0.04118931666016579 0.9535685777664185 0.09013931453227997 0.9084842801094055 0.013448345474898815 0.9488278031349182 0.012457311153411865 0.9393672943115234 0.00880812481045723 0.09013931453227997 0.9084842801094055 0.46420952677726746 0.534898579120636 0.09013931453227997 0.9084842801094055 0.04118931666016579 0.9535685777664185 0.9837915897369385 0.014487686567008495 0.9673590064048767 0.014487686567008495 0.9673590064048767 0.9837915897369385 0.994988739490509 0.9832835793495178 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.921712338924408 0.07666809111833572 0.9231721758842468 0.07464749366044998 0.012457311153411865 0.9393672943115234 0.00880812481045723 0.013448345474898815 0.9488278031349182 0.46420952677726746 0.534898579120636 0.4902932047843933 0.5092756152153015 0.9663050770759583 0.013448345474898815 0.9488278031349182 0.9231721758842468 0.07464749366044998 0.9357162714004517 0.06268718093633652 0.9588677287101746 0.012457311153411865 0.9393672943115234 0.00880812481045723 0.10587628185749054 0.8939482569694519 0.0884779691696167 0.9114038348197937 0.4902932047843933 0.5092756152153015 0.46420952677726746 0.534898579120636 0.013448345474898815 0.9488278031349182 0.9663050770759583 0.950567364692688 0.047077398747205734 0.921712338924408 0.07666809111833572 0.921712338924408 0.07666809111833572 0.950567364692688 0.047077398747205734 0.9357162714004517 0.06268718093633652 0.9231721758842468 0.07464749366044998</float_array>
+				<technique_common>
+				<accessor source="#id-controller-14-skin_weights-array" count="278" stride="1">
+					<param name="WEIGHT" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<joints>
+				<input semantic="JOINT" source="#id-controller-14-joints"/>
+				<input semantic="INV_BIND_MATRIX" source="#id-controller-14-bind_poses"/>
+			</joints>
+			<vertex_weights count="194">
+				<input semantic="JOINT" source="#id-controller-14-joints" offset="0"/>
+				<input semantic="WEIGHT" source="#id-controller-14-skin_weights" offset="1"/>
+				<vcount> 2 2 1 1 2 2 1 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 2 2 1 2 2 2 3 2 2 1 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 3 2 2 2 1 2 2 3 1 2 2 2 2 2 2 2 2 1 2 2 2 2 2 1 1 2 2 2 2 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 1 2 2 2 3 2 2 2 2 1 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 3 2 2 2 1 2 2 2 1 3 2 2 2 2 2 1 2 2 2 2 2 2</vcount>
+				<v> 1 0 2 1 1 2 2 3 2 4 2 5 1 6 2 7 1 8 2 9 2 10 1 11 2 12 1 13 2 14 3 15 3 16 3 17 3 18 3 19 3 20 3 21 3 22 3 23 3 24 3 25 3 26 3 27 3 28 3 29 3 30 3 31 3 32 3 33 3 34 3 35 3 36 3 37 3 38 0 39 1 40 2 41 1 42 2 43 1 44 2 45 1 46 0 47 1 48 1 49 2 50 1 51 2 52 0 53 1 54 2 55 1 56 2 57 1 58 2 59 2 60 1 61 2 62 1 63 2 64 2 65 2 66 2 67 5 68 5 69 5 70 5 71 5 72 5 73 5 74 5 75 5 76 5 77 5 78 5 79 5 80 5 81 5 82 5 83 5 84 5 85 5 86 5 87 5 88 5 89 5 90 5 91 0 92 1 93 0 94 1 95 0 96 1 97 2 98 0 99 1 100 1 101 2 102 0 103 1 104 1 105 1 106 2 107 0 108 1 109 0 110 1 111 2 112 1 113 0 114 1 115 1 116 2 117 1 118 2 119 1 120 2 121 1 122 2 123 0 124 1 125 0 126 1 127 0 128 1 129 1 130 0 131 1 132 0 133 1 134 0 135 1 136 0 137 1 138 1 139 2 140 2 141 2 142 1 143 2 144 1 145 2 146 1 147 2 148 1 149 2 150 2 151 1 152 2 153 4 154 4 155 4 156 4 157 4 158 4 159 4 160 4 161 4 162 4 163 4 164 4 165 4 166 4 167 4 168 4 169 4 170 4 171 4 172 4 173 4 174 4 175 4 176 4 177 0 178 1 179 2 180 1 181 1 182 2 183 1 184 2 185 0 186 1 187 0 188 1 189 2 190 1 191 2 192 1 193 2 194 1 195 2 196 1 197 2 198 2 199 1 200 2 201 1 202 2 203 2 204 2 205 2 206 6 207 6 208 6 209 6 210 6 211 6 212 6 213 6 214 6 215 6 216 6 217 6 218 6 219 6 220 6 221 6 222 6 223 6 224 6 225 6 226 6 227 6 228 6 229 6 230 0 231 1 232 0 233 1 234 0 235 1 236 2 237 0 238 1 239 1 240 2 241 1 242 2 243 1 244 0 245 1 246 0 247 1 248 0 249 1 250 1 251 0 252 1 253 2 254 1 255 2 256 1 257 2 258 1 259 2 260 1 261 2 262 0 263 1 264 1 265 0 266 1 267 0 268 1 269 0 270 1 271 0 272 1 273 0 274 1 275 0 276 1 277</v>
+			</vertex_weights>
+		</skin>
+	</controller>
+</library_controllers>
+<library_cameras>
+	<camera id="id-camera-15" name="Camera">
+		<optics>
+			<technique_common>
+				<perspective>
+					<yfov>49.13434207760448</yfov>
+					<aspect_ratio>1.7777777777777777</aspect_ratio>
+					<znear>0.10000000149011612</znear>
+					<zfar>100.0</zfar>
+				</perspective>
+			</technique_common>
+		</optics>
+	</camera>
+</library_cameras>
+<library_lights>
+	<light id="id-light-16" name="Lamp">
+			<technique_common>
+				<point>
+					<color>  1.0 1.0 1.0 </color>
+					<linear_attenuation>0.06666670481366115</linear_attenuation>
+				</point>
+			</technique_common>
+	</light>
+</library_lights>
+<library_visual_scenes>
+	<visual_scene id="id-scene-1" name="scene">
+		<node id="Armature" name="Armature" type="NODE">
+			<matrix sid="transform"> 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0  </matrix>
+			<node id="id-bone-3" sid="id-skelbones-2-0" name="Abs" type="JOINT">
+				<matrix sid="transform"> 1.0 0.0 0.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 -2.558901786804199 0.0 0.0 0.0 1.0  </matrix>
+				<node id="id-bone-4" sid="id-skelbones-2-1" name="Chest" type="JOINT">
+					<matrix sid="transform"> 1.0 0.0 0.0 0.0 0.0 1.0 0.0 2.8299169540405273 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0  </matrix>
+					<node id="id-bone-5" sid="id-skelbones-2-2" name="Head" type="JOINT">
+						<matrix sid="transform"> -1.0 0.0 3.894144242622133e-07 0.0 1.2452643716187595e-07 0.9474928379058838 0.3197786211967468 2.7862939834594727 -3.689671359552449e-07 0.3197788894176483 -0.947492241859436 0.0 0.0 0.0 0.0 1.0  </matrix>
+					</node>
+					<node id="id-bone-6" sid="id-skelbones-2-3" name="Hand.L" type="JOINT">
+						<matrix sid="transform"> 1.0 0.0 -8.742277657347586e-08 2.494109630584717 -8.742277657347586e-08 0.0 -1.0 0.08863401412963867 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0  </matrix>
+					</node>
+					<node id="id-bone-7" sid="id-skelbones-2-4" name="Hand.R" type="JOINT">
+						<matrix sid="transform"> 1.0 0.0 -3.2584136988589307e-07 -2.494109630584717 -3.2584136988589307e-07 0.0 -1.0 0.08863401412963867 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0  </matrix>
+					</node>
+				</node>
+			</node>
+			<node id="id-bone-8" sid="id-skelbones-2-5" name="Foot.L" type="JOINT">
+				<matrix sid="transform"> 0.9660284519195557 0.25842151045799255 -0.0027167797088623047 1.2565031051635742 0.219715878367424 -0.8157137632369995 0.5351038575172424 -0.16019755601882935 0.13606631755828857 -0.5175224542617798 -0.8447819948196411 -4.452898025512695 0.0 0.0 0.0 1.0  </matrix>
+			</node>
+			<node id="id-bone-9" sid="id-skelbones-2-6" name="Foot.R" type="JOINT">
+				<matrix sid="transform"> 0.9660284519195557 -0.2584215998649597 -0.002716749906539917 -1.2565031051635742 -0.2167026698589325 -0.8157137036323547 0.5363312363624573 -0.16019755601882935 -0.14081567525863647 -0.5175224542617798 -0.8440033197402954 -4.452898025512695 0.0 0.0 0.0 1.0  </matrix>
+			</node>
+			<node id="Bob" name="Bob" type="NODE">
+				<matrix sid="transform"> 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0  </matrix>
+				<instance_controller url="#id-controller-14">
+					<skeleton>#id-bone-3</skeleton>
+					<skeleton>#id-bone-8</skeleton>
+					<skeleton>#id-bone-9</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="id-trimat-13" target="#id-material-11"/>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</node>
+		<node id="Camera" name="Camera" type="NODE">
+			<matrix sid="transform"> 0.6858805418014526 -0.31737011671066284 0.6548618674278259 7.481131553649902 0.7276337742805481 0.31246861815452576 -0.6106656193733215 -6.5076398849487305 -0.010816780850291252 0.8953432440757751 0.4452453553676605 -0.17473220825195312 0.0 0.0 0.0 1.0  </matrix>
+			<instance_camera url="#id-camera-15"/>
+		</node>
+		<node id="Lamp" name="Lamp" type="NODE">
+			<matrix sid="transform"> -0.29086464643478394 -0.7711008191108704 0.5663931965827942 4.076245307922363 0.9551711678504944 -0.1998833566904068 0.21839119493961334 1.0054539442062378 -0.05518905818462372 0.6045247316360474 0.7946722507476807 0.3854646682739258 0.0 0.0 0.0 1.0  </matrix>
+			<instance_light url="#id-light-16"/>
+		</node>
+	</visual_scene>
+</library_visual_scenes>
+<scene>
+	<instance_visual_scene url="#id-scene-1" />
+</scene>
 </COLLADA>

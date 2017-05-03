@@ -1,0 +1,35 @@
+﻿Build started 4/27/2017 5:35:50 PM.
+     1>Project "c:\Users\luis angel garcia\documents\visual studio 2013\Projects\SomeStuffWithShaders\SomeStuffWithShaders\SomeStuffWithShaders.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Luis Angel Garcia\MyProjects\GraphicsStuff\CommonIncludes" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\animation.h(28): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\skeleton.h(66): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\skeleton.h(74): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\skeleton.h(97): warning C4018: '>' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\skeleton.h(178): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\model.h(44): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\model.h(101): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\model.h(113): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\model.h(127): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\myprojects\graphicsstuff\commonincludes\util\model.h(139): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(119): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(160): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(170): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(174): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(179): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(188): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(192): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(229): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\luis angel garcia\documents\visual studio 2013\projects\somestuffwithshaders\somestuffwithshaders\source.cpp(230): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\luis angel garcia\documents\visual studio 2013\Projects\SomeStuffWithShaders\Debug\SomeStuffWithShaders.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Luis Angel Garcia\MyProjects\GraphicsStuff\CommonLibraries\Win32" opengl32.lib glfw3.lib glew32.lib SOIL.lib assimp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\luis angel garcia\documents\visual studio 2013\Projects\SomeStuffWithShaders\Debug\SomeStuffWithShaders.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\luis angel garcia\documents\visual studio 2013\Projects\SomeStuffWithShaders\Debug\SomeStuffWithShaders.lib" /MACHINE:X86 Debug\Bone.obj
+         Debug\Mesh.obj
+         Debug\Model.obj
+         Debug\Source.obj
+         SomeStuffWithShaders.vcxproj -> c:\users\luis angel garcia\documents\visual studio 2013\Projects\SomeStuffWithShaders\Debug\SomeStuffWithShaders.exe
+     1>Done Building Project "c:\Users\luis angel garcia\documents\visual studio 2013\Projects\SomeStuffWithShaders\SomeStuffWithShaders\SomeStuffWithShaders.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.22
